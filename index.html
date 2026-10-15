@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barão Bar e Prosa · Venâncio Aires/RS</title>
+  <link rel="stylesheet" href="ds/styles.css">
+  <script src="ds/ds-bundle.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #FFF9E9; color: #17201C; -webkit-font-smoothing: antialiased; }
+    a { color: #7d5411; }
+    a:hover { color: #b68235; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</helmet>
+<div lang="pt-BR" style="--color-bg: #FFF9E9; --color-surface: #F6EED8; --color-text: #17201C; --color-divider: rgba(23, 32, 28, 0.16); background: #FFF9E9; color: #17201C; font-family: var(--font-body); font-size: 16px; line-height: 1.6; overflow-x: clip;">
+  <sc-if value="{{ introOn }}" hint-placeholder-val="{{ true }}">
+    <div ref="{{ introRef }}" style="position: fixed; inset: 0; z-index: 200; overflow: hidden; cursor: pointer;">
+      <div data-k="cortinaE" aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 0; width: calc(50% + 1px); background: #0E2D20; border-right: 1px solid rgba(217, 164, 65, 0);"></div>
+      <div data-k="cortinaD" aria-hidden="true" style="position: absolute; top: 0; bottom: 0; right: 0; width: 50%; background: #0E2D20; border-left: 1px solid rgba(217, 164, 65, 0);"></div>
+      <div data-k="moldura" aria-hidden="true" style="position: absolute; inset: clamp(12px, 2.2vw, 28px); border: 1px solid rgba(217, 164, 65, 0.5); opacity: 0; pointer-events: none;">
+        <div style="position: absolute; inset: 6px; border: 1px solid rgba(217, 164, 65, 0.24);"></div>
+      </div>
+      <div aria-hidden="true" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(18px, 3.2vh, 32px); pointer-events: none;">
+        <div data-k="palco" style="position: relative; width: clamp(170px, min(24vw, 40vh), 300px); aspect-ratio: 199 / 234;">
+          <img data-k="cartola" src="assets/logo-partes/cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%; opacity: 0;">
+          <img data-k="b" src="assets/logo-partes/b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto; opacity: 0;">
+          <img data-k="a" src="assets/logo-partes/a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto; opacity: 0;">
+          <img data-k="r" src="assets/logo-partes/r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto; opacity: 0;">
+          <img data-k="atil" src="assets/logo-partes/atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto; opacity: 0;">
+          <img data-k="o" src="assets/logo-partes/o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto; opacity: 0;">
+          <img data-k="bigode" src="assets/logo-partes/bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto; opacity: 0;">
+          <img data-k="corrente" src="assets/logo-partes/corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%; opacity: 0;">
+          <img data-k="gravata" src="assets/logo-partes/gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto; opacity: 0;">
+        </div>
+        <div data-k="lema" style="display: flex; align-items: center; gap: 14px; opacity: 0;">
+          <span data-k="linhaE" style="width: 44px; height: 1px; background: #D9A441; transform-origin: 100% 50%;"></span>
+          <span style="font-family: var(--font-heading); font-style: italic; font-size: clamp(20px, 2vw, 26px); line-height: 1; letter-spacing: 0.04em; color: #D9A441;">bar e prosa</span>
+          <span data-k="linhaD" style="width: 44px; height: 1px; background: #D9A441; transform-origin: 0% 50%;"></span>
+        </div>
+      </div>
+      <button type="button" data-k="pular" onClick="{{ pularIntro }}" style="position: absolute; right: clamp(20px, 3vw, 44px); bottom: clamp(20px, 3vw, 40px); min-height: 44px; padding: 0 16px; background: transparent; border: 1px solid rgba(217, 164, 65, 0.55); border-radius: 4px; color: #FFF9E9; font-family: var(--font-body); font-size: 14px; letter-spacing: 0.04em; white-space: nowrap; cursor: pointer; opacity: 0;" style-hover="border-color: #D9A441; color: #D9A441;">Pular abertura</button>
+    </div>
+  </sc-if>
+
+
+  <sc-if value="{{ compactNav }}" hint-placeholder-val="{{ false }}">
+    <header style="position: sticky; top: 0; z-index: 60; background: rgba(255, 249, 233, 0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(23, 32, 28, 0.14);">
+      <div style="max-width: 1240px; margin: 0 auto; height: 64px; padding: 0 clamp(16px, 4vw, 40px); display: flex; align-items: center; gap: 10px;">
+        <a href="#inicio" aria-label="Barão Bar e Prosa, início" style="display: flex; align-items: center; gap: 10px; margin-right: auto; color: #17201C; text-decoration: none;">
+          <img src="assets/marca-linha-tinta.png" alt="" style="height: 34px; width: auto;">
+          <span style="display: flex; flex-direction: column; line-height: 1;">
+            <span style="font-family: var(--font-heading); font-size: 20px; font-weight: 500; letter-spacing: 0.2em;">BARÃO</span>
+            <span style="font-family: var(--font-heading); font-style: italic; font-size: 14px; color: #7d5411; margin-top: 3px;">bar e prosa</span>
+          </span>
+        </a>
+        <a class="btn btn-primary" href="{{ waGeral }}" target="_blank" rel="noopener" style="min-height: 42px; padding: 0 16px; font-size: 15px;">Reservar</a>
+        <button type="button" class="btn btn-secondary btn-icon" onClick="{{ openMenu }}" aria-label="Abrir menu" style="width: 44px; height: 44px;">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+        </button>
+      </div>
+    </header>
+  </sc-if>
+
+  <sc-if value="{{ isWide }}" hint-placeholder-val="{{ false }}">
+    <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 60; background: rgba(10, 33, 24, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(217, 164, 65, 0.35); color: #FFF9E9; --color-accent: #D9A441; --color-text: #FFF9E9; transform: {{ barT }}; opacity: {{ barO }}; visibility: {{ barV }}; transition: {{ barTr }};">
+      <div style="max-width: 1240px; margin: 0 auto; height: 64px; padding: 0 clamp(20px, 4vw, 40px); display: flex; align-items: center; gap: 32px;">
+        <a href="#inicio" aria-label="Barão Bar e Prosa, início" style="display: flex; align-items: center; gap: 12px; margin-right: auto; color: #FFF9E9; text-decoration: none;">
+          <img src="assets/marca-linha-ouro.png" alt="" style="height: 32px; width: auto;">
+          <span style="font-family: var(--font-heading); font-size: 20px; font-weight: 500; letter-spacing: 0.2em;">BARÃO</span>
+          <span style="font-family: var(--font-heading); font-style: italic; font-size: 16px; color: #D9A441;">bar e prosa</span>
+        </a>
+        <nav aria-label="Seções" style="display: flex; gap: 26px;">
+          <a href="#almoco" style="font-family: var(--font-heading); font-size: 18px; font-weight: 500; color: #FFF9E9; text-decoration: none;" style-hover="color: #D9A441;">Almoço</a>
+          <a href="#cardapio" style="font-family: var(--font-heading); font-size: 18px; font-weight: 500; color: #FFF9E9; text-decoration: none;" style-hover="color: #D9A441;">Cardápio</a>
+          <a href="#drinks" style="font-family: var(--font-heading); font-size: 18px; font-weight: 500; color: #FFF9E9; text-decoration: none;" style-hover="color: #D9A441;">Drinks</a>
+          <a href="#happy-hour" style="font-family: var(--font-heading); font-size: 18px; font-weight: 500; color: #FFF9E9; text-decoration: none;" style-hover="color: #D9A441;">Happy hour</a>
+          <a href="#agenda" style="font-family: var(--font-heading); font-size: 18px; font-weight: 500; color: #FFF9E9; text-decoration: none;" style-hover="color: #D9A441;">Agenda</a>
+          <a href="#contato" style="font-family: var(--font-heading); font-size: 18px; font-weight: 500; color: #FFF9E9; text-decoration: none;" style-hover="color: #D9A441;">Contato</a>
+        </nav>
+        <a class="btn btn-primary" href="{{ waGeral }}" target="_blank" rel="noopener" style="min-height: 42px; padding: 0 18px; font-size: 15px;">Reservar mesa</a>
+      </div>
+    </header>
+  </sc-if>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-label="Menu" style="position: fixed; inset: 0; z-index: 100; background: #0E2D20; color: #FFF9E9; --color-accent: #D9A441; --color-text: #FFF9E9; --color-divider: rgba(255, 249, 233, 0.16); display: flex; flex-direction: column; padding: 0 clamp(20px, 5vw, 40px) 32px; overflow-y: auto;">
+      <div style="height: 64px; display: flex; align-items: center; justify-content: space-between; flex: 0 0 auto;">
+        <span style="display: flex; align-items: center; gap: 10px;">
+          <img src="assets/marca-linha-ouro.png" alt="" style="height: 32px; width: auto;">
+          <span style="font-family: var(--font-heading); font-size: 20px; font-weight: 500; letter-spacing: 0.2em;">BARÃO</span>
+        </span>
+        <button type="button" class="btn btn-secondary btn-icon" onClick="{{ closeMenu }}" aria-label="Fechar menu" style="width: 44px; height: 44px; color: #FFF9E9;">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+        </button>
+      </div>
+      <nav aria-label="Seções" style="display: flex; flex-direction: column; margin-top: 20px;">
+        <a href="#a-casa" onClick="{{ closeMenu }}" style="font-family: var(--font-heading); font-size: 36px; line-height: 1.1; color: #FFF9E9; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(255, 249, 233, 0.14);">A Casa</a>
+        <a href="#almoco" onClick="{{ closeMenu }}" style="font-family: var(--font-heading); font-size: 36px; line-height: 1.1; color: #FFF9E9; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(255, 249, 233, 0.14);">Almoço</a>
+        <a href="#cardapio" onClick="{{ closeMenu }}" style="font-family: var(--font-heading); font-size: 36px; line-height: 1.1; color: #FFF9E9; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(255, 249, 233, 0.14);">Cardápio</a>
+        <a href="#drinks" onClick="{{ closeMenu }}" style="font-family: var(--font-heading); font-size: 36px; line-height: 1.1; color: #FFF9E9; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(255, 249, 233, 0.14);">Drinks</a>
+        <a href="#happy-hour" onClick="{{ closeMenu }}" style="font-family: var(--font-heading); font-size: 36px; line-height: 1.1; color: #FFF9E9; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(255, 249, 233, 0.14);">Happy hour</a>
+        <a href="#agenda" onClick="{{ closeMenu }}" style="font-family: var(--font-heading); font-size: 36px; line-height: 1.1; color: #FFF9E9; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(255, 249, 233, 0.14);">Agenda</a>
+        <a href="#reservas" onClick="{{ closeMenu }}" style="font-family: var(--font-heading); font-size: 36px; line-height: 1.1; color: #FFF9E9; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(255, 249, 233, 0.14);">Reservas</a>
+        <a href="#contato" onClick="{{ closeMenu }}" style="font-family: var(--font-heading); font-size: 36px; line-height: 1.1; color: #FFF9E9; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(255, 249, 233, 0.14);">Contato</a>
+      </nav>
+      <div style="margin-top: auto; padding-top: 32px; display: flex; flex-direction: column; gap: 14px;">
+        <a class="btn btn-primary btn-block" href="{{ waGeral }}" target="_blank" rel="noopener" style="min-height: 50px; font-size: 17px;">Reservar pelo WhatsApp</a>
+        <p style="margin: 0; color: #C9C3AE; font-size: 14px;">Rua Barão do Triunfo, 1313 · Venâncio Aires/RS</p>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ pdfOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-label="Cardápio da noite em PDF" onClick="{{ fecharPdfFundo }}" style="position: fixed; inset: 0; z-index: 110; background: rgba(7, 27, 22, 0.8); display: flex; align-items: center; justify-content: center; padding: clamp(0px, 3vw, 32px);">
+      <div style="width: min(900px, 100%); height: 100%; display: flex; flex-direction: column; background: #FFF9E9; color: #17201C; border: 1px solid rgba(182, 130, 53, 0.5); border-radius: 4px; box-shadow: var(--shadow-lg); overflow: hidden;">
+        <div style="display: flex; align-items: center; gap: 10px; padding: 10px 10px 10px 22px; border-bottom: 1px solid rgba(23, 32, 28, 0.14);">
+          <span style="margin-right: auto; font-family: var(--font-heading); font-size: 24px; line-height: 1.1;">Cardápio da noite</span>
+          <a class="btn btn-secondary" href="assets/cardapio-noite-barao.pdf" download="Cardapio-Barao-Bar-e-Prosa.pdf" style="min-height: 44px; padding: 0 14px; font-size: 15px;">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg>
+            Baixar PDF
+          </a>
+          <button type="button" class="btn btn-secondary btn-icon" onClick="{{ fecharPdf }}" aria-label="Fechar cardápio" style="width: 44px; height: 44px;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+          </button>
+        </div>
+        <div style="flex: 1 1 auto; min-height: 0; overflow-y: auto; background: #E9E1C9; padding: clamp(10px, 2vw, 20px);">
+          <sc-if value="{{ pdfCarregando }}" hint-placeholder-val="{{ true }}">
+            <p style="margin: 40px 0; text-align: center; font-family: var(--font-heading); font-style: italic; font-size: 22px; color: #5F6962;">Abrindo o cardápio…</p>
+          </sc-if>
+          <sc-if value="{{ pdfErro }}" hint-placeholder-val="{{ false }}">
+            <p style="margin: 40px 0; text-align: center; font-size: 15px; color: #3D4841;">Não foi possível exibir o cardápio aqui. <a href="assets/cardapio-noite-barao.pdf" download="Cardapio-Barao-Bar-e-Prosa.pdf">Baixe o PDF</a>.</p>
+          </sc-if>
+          <div ref="{{ pdfRef }}" style="display: flex; flex-direction: column; align-items: center; gap: 14px;"></div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <section id="inicio" data-screen-label="Início" style="position: relative; display: grid; grid-template-columns: {{ heroCols }};">
+    <div style="position: relative; box-sizing: border-box; background: #FFF9E9; color: #17201C; min-height: {{ heroMinH }}; padding: {{ heroPadTop }} clamp(20px, 4vw, 72px) 104px; display: flex; flex-direction: row-reverse; flex-wrap: wrap; align-items: center; align-content: center; justify-content: center; gap: clamp(28px, 3.4vw, 56px);">
+      <figure data-hero="fig" style="margin: 0; flex: 0 0 auto; padding: 12px; border: 1px solid rgba(182, 130, 53, 0.5); border-radius: 50%; transition: translate 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);">
+        <div class="plate" style="position: relative; width: clamp(210px, 19vw, 360px); aspect-ratio: 1; border-radius: 50%; overflow: hidden;">
+          <img data-kb="dia" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&h=800&q=75" alt="Bife fatiado com fritas" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </figure>
+      <div data-hero="txt" style="flex: 1 1 240px; max-width: 420px;">
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411; margin-bottom: 20px;">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+          De dia
+        </div>
+        <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(44px, 4.4vw, 78px); line-height: 0.98; letter-spacing: -0.015em; text-wrap: balance;">Almoço todos os dias</h2>
+        <p style="margin: 20px 0 0; font-size: 16.5px; line-height: 1.7; color: #3D4841; text-wrap: pretty;">Venha almoçar, dar uma pausa na rotina, encontrar seus amigos e reunir sua família. O Chef Barão te espera!</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px;">
+          <a class="btn btn-primary" href="#almoco" style="min-height: 46px; padding: 0 22px; font-size: 16px;">Ver o cardápio do almoço</a>
+        </div>
+      </div>
+      <sc-if value="{{ twoCol }}" hint-placeholder-val="{{ true }}">
+        <a data-hero="extra" href="#contato" style="position: absolute; left: clamp(20px, 4vw, 72px); bottom: 32px; display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #3D4841; text-decoration: none;" style-hover="color: #7d5411;">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Rua Barão do Triunfo, 1313 · Venâncio Aires/RS
+        </a>
+      </sc-if>
+    </div>
+
+    <div style="position: relative; box-sizing: border-box; background: #0E2D20; color: #FFF9E9; --color-bg: #0E2D20; --color-surface: #143B2A; --color-text: #FFF9E9; --color-accent: #D9A441; --color-divider: rgba(255, 249, 233, 0.16); min-height: {{ heroMinH }}; padding: {{ heroPadTopNoite }} clamp(20px, 4vw, 72px) 104px; display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; align-content: center; justify-content: center; gap: clamp(28px, 3.4vw, 56px);">
+      <figure data-hero="fig" style="margin: 0; flex: 0 0 auto; padding: 12px; border: 1px solid rgba(217, 164, 65, 0.5); border-radius: 999px 999px 10px 10px; transition: translate 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);">
+        <div class="plate" style="position: relative; width: clamp(180px, 15.5vw, 300px); aspect-ratio: 0.74; border-radius: 999px 999px 4px 4px; overflow: hidden;">
+          <img data-kb="noite" src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=700&h=950&q=75" alt="Drink com ervas sobre tábua de madeira" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </figure>
+      <div data-hero="txt" style="flex: 1 1 240px; max-width: 420px;">
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #D9A441; margin-bottom: 20px;">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+          À noite
+        </div>
+        <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(44px, 4.4vw, 78px); line-height: 0.98; letter-spacing: -0.015em; text-wrap: balance;">A resenha começa</h2>
+        <p style="margin: 20px 0 0; font-size: 16.5px; line-height: 1.7; color: #E4DCC6; text-wrap: pretty;">Música, drinks, petiscos e boa prosa.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px;">
+          <a class="btn btn-primary" href="#drinks" style="min-height: 46px; padding: 0 22px; font-size: 16px;">Conhecer os drinks</a>
+          <a class="btn btn-ghost" href="#agenda" style="min-height: 46px; padding: 0 14px; font-size: 16px;">Ver a agenda</a>
+        </div>
+      </div>
+      <sc-if value="{{ twoCol }}" hint-placeholder-val="{{ true }}">
+        <a data-hero="extra" href="{{ waGeral }}" target="_blank" rel="noopener" style="position: absolute; right: clamp(20px, 4vw, 72px); bottom: 32px; display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #C9C3AE; text-decoration: none;" style-hover="color: #D9A441;">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+          Reservas pelo WhatsApp
+        </a>
+      </sc-if>
+      <sc-if value="{{ medalhaMobile }}" hint-placeholder-val="{{ false }}">
+        <h1 style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); z-index: 5; margin: 0; line-height: 0;">
+          <span data-disco="1" style="position: relative; cursor: pointer; width: 124px; height: 124px; border-radius: 50%; background: #0E2D20; border: 1px solid #D9A441; box-shadow: inset 0 0 0 5px #0E2D20, inset 0 0 0 6px rgba(217, 164, 65, 0.55), var(--shadow-md); display: grid; place-items: center;">
+            <span style="position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;">Barão Bar e Prosa</span>
+            <span data-logo="vivo" aria-hidden="true" style="position: relative; display: block; width: 62px; aspect-ratio: 199 / 234; margin-left: 3px;">
+              <img data-p="cartola" src="assets/logo-partes/cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%;">
+              <img data-p="b" src="assets/logo-partes/b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto;">
+              <img data-p="a" src="assets/logo-partes/a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto;">
+              <img data-p="r" src="assets/logo-partes/r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto;">
+              <img data-p="atil" src="assets/logo-partes/atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto;">
+              <img data-p="o" src="assets/logo-partes/o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto;">
+              <img data-p="bigode" src="assets/logo-partes/bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto;">
+              <img data-p="corrente" src="assets/logo-partes/corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%;">
+              <img data-p="gravata" src="assets/logo-partes/gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto;">
+              <svg data-p="brilho" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; left: 71%; top: 42.9%; width: 12%; height: auto; opacity: 0; transform-origin: 50% 50%; overflow: visible;"><path fill="#FFF9E9" d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>
+            </span>
+          </span>
+        </h1>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Principal" style="position: absolute; top: 0; left: 0; right: 0; z-index: 5; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: start; padding: 0 clamp(24px, 4vw, 64px);">
+        <div data-hero="nav" style="display: flex; gap: clamp(20px, 2.4vw, 36px); padding-top: 34px;">
+          <a href="#a-casa" style="font-family: var(--font-heading); font-size: 19px; font-weight: 500; color: #17201C; text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid transparent;" style-hover="color: #7d5411; border-bottom-color: #b68235;">A Casa</a>
+          <a href="#almoco" style="font-family: var(--font-heading); font-size: 19px; font-weight: 500; color: #17201C; text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid transparent;" style-hover="color: #7d5411; border-bottom-color: #b68235;">Almoço</a>
+          <a href="#cardapio" style="font-family: var(--font-heading); font-size: 19px; font-weight: 500; color: #17201C; text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid transparent;" style-hover="color: #7d5411; border-bottom-color: #b68235;">Cardápio</a>
+        </div>
+        <h1 style="margin: 20px 0 0; line-height: 0;">
+          <span data-disco="1" style="position: relative; cursor: pointer; width: 168px; height: 168px; border-radius: 50%; background: #0E2D20; border: 1px solid #D9A441; box-shadow: inset 0 0 0 6px #0E2D20, inset 0 0 0 7px rgba(217, 164, 65, 0.55), var(--shadow-md); display: grid; place-items: center;">
+            <span style="position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;">Barão Bar e Prosa</span>
+            <svg data-anel="1" viewBox="0 0 168 168" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; transform-origin: 50% 50%;">
+              <defs><path id="anel-w" d="M 18,84 a 66,66 0 1,1 132,0 a 66,66 0 1,1 -132,0" fill="none"></path></defs>
+              <text fill="#D9A441" style="font-family: var(--font-body); font-size: 8.6px; font-weight: 500;"><textPath href="#anel-w" textLength="410" lengthAdjust="spacing">BAR E PROSA · ALMOÇO · DRINKS · MÚSICA · VENÂNCIO AIRES · </textPath></text>
+            </svg>
+            <span data-logo="vivo" aria-hidden="true" style="position: relative; display: block; width: 76px; aspect-ratio: 199 / 234; margin-left: 4px;">
+              <img data-p="cartola" src="assets/logo-partes/cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%;">
+              <img data-p="b" src="assets/logo-partes/b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto;">
+              <img data-p="a" src="assets/logo-partes/a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto;">
+              <img data-p="r" src="assets/logo-partes/r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto;">
+              <img data-p="atil" src="assets/logo-partes/atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto;">
+              <img data-p="o" src="assets/logo-partes/o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto;">
+              <img data-p="bigode" src="assets/logo-partes/bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto;">
+              <img data-p="corrente" src="assets/logo-partes/corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%;">
+              <img data-p="gravata" src="assets/logo-partes/gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto;">
+              <svg data-p="brilho" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; left: 71%; top: 42.9%; width: 12%; height: auto; opacity: 0; transform-origin: 50% 50%; overflow: visible;"><path fill="#FFF9E9" d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>
+            </span>
+          </span>
+        </h1>
+        <div data-hero="nav" style="display: flex; justify-content: flex-end; align-items: center; gap: clamp(20px, 2.4vw, 36px); padding-top: 26px; --color-accent: #D9A441; --color-text: #FFF9E9;">
+          <a href="#drinks" style="font-family: var(--font-heading); font-size: 19px; font-weight: 500; color: #FFF9E9; text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid transparent;" style-hover="color: #D9A441; border-bottom-color: #D9A441;">Drinks</a>
+          <a href="#agenda" style="font-family: var(--font-heading); font-size: 19px; font-weight: 500; color: #FFF9E9; text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid transparent;" style-hover="color: #D9A441; border-bottom-color: #D9A441;">Agenda</a>
+          <a href="#contato" style="font-family: var(--font-heading); font-size: 19px; font-weight: 500; color: #FFF9E9; text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid transparent;" style-hover="color: #D9A441; border-bottom-color: #D9A441;">Contato</a>
+          <a class="btn btn-primary" href="{{ waGeral }}" target="_blank" rel="noopener" style="min-height: 44px; padding: 0 20px; font-size: 16px;">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+            Reservar mesa
+          </a>
+        </div>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ medalhaMeio }}" hint-placeholder-val="{{ false }}">
+      <h1 style="position: absolute; top: 28px; left: 50%; transform: translateX(-50%); z-index: 5; margin: 0; line-height: 0;">
+        <span data-disco="1" style="position: relative; cursor: pointer; width: 150px; height: 150px; border-radius: 50%; background: #0E2D20; border: 1px solid #D9A441; box-shadow: inset 0 0 0 6px #0E2D20, inset 0 0 0 7px rgba(217, 164, 65, 0.55), var(--shadow-md); display: grid; place-items: center;">
+          <span style="position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;">Barão Bar e Prosa</span>
+            <svg data-anel="1" viewBox="0 0 168 168" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; transform-origin: 50% 50%;">
+              <defs><path id="anel-m" d="M 18,84 a 66,66 0 1,1 132,0 a 66,66 0 1,1 -132,0" fill="none"></path></defs>
+              <text fill="#D9A441" style="font-family: var(--font-body); font-size: 8.6px; font-weight: 500;"><textPath href="#anel-m" textLength="410" lengthAdjust="spacing">BAR E PROSA · ALMOÇO · DRINKS · MÚSICA · VENÂNCIO AIRES · </textPath></text>
+            </svg>
+            <span data-logo="vivo" aria-hidden="true" style="position: relative; display: block; width: 68px; aspect-ratio: 199 / 234; margin-left: 4px;">
+              <img data-p="cartola" src="assets/logo-partes/cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%;">
+              <img data-p="b" src="assets/logo-partes/b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto;">
+              <img data-p="a" src="assets/logo-partes/a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto;">
+              <img data-p="r" src="assets/logo-partes/r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto;">
+              <img data-p="atil" src="assets/logo-partes/atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto;">
+              <img data-p="o" src="assets/logo-partes/o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto;">
+              <img data-p="bigode" src="assets/logo-partes/bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto;">
+              <img data-p="corrente" src="assets/logo-partes/corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%;">
+              <img data-p="gravata" src="assets/logo-partes/gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto;">
+              <svg data-p="brilho" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; left: 71%; top: 42.9%; width: 12%; height: auto; opacity: 0; transform-origin: 50% 50%; overflow: visible;"><path fill="#FFF9E9" d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>
+            </span>
+        </span>
+      </h1>
+    </sc-if>
+  </section>
+
+  <section id="a-casa" data-screen-label="A Casa" style="background: #FFF9E9; padding: clamp(80px, 11vw, 150px) clamp(20px, 5vw, 64px) clamp(72px, 9vw, 120px); scroll-margin-top: 64px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: clamp(48px, 7vw, 112px); align-items: center;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411; margin-bottom: 22px;"><span style="width: 32px; height: 1px; background: currentColor;"></span>A Casa</div>
+          <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(40px, 5vw, 68px); line-height: 1.04; letter-spacing: -0.012em; text-wrap: balance;">Onde bons momentos ganham sabor e <em style="font-style: italic; color: #7d5411;">boas histórias</em> acontecem.</h2>
+          <div style="columns: 2 250px; column-gap: 36px; margin-top: 36px; font-size: 16px; line-height: 1.72; color: #3D4841; text-align: justify; hyphens: auto;">
+            <p style="margin: 0 0 16px;"><span style="float: left; font-family: var(--font-heading); font-size: 66px; line-height: 0.82; padding: 6px 10px 0 0; color: #17201C;">U</span>m ambiente feito para se encontrar, brindar e aproveitar o melhor da vida. De dia, a cozinha do Chef Barão serve almoço para quem quer dar uma pausa na rotina, encontrar os amigos ou reunir a família.</p>
+            <p style="margin: 0 0 16px;">À noite, o balcão assume: drinks da casa, chopp gelado, petiscos para dividir e música ao vivo, sempre com a elegância que dá nome à casa.</p>
+            <p style="margin: 0;">Aqui, cada mesa tem a sua história: o almoço que virou amizade, o aniversário que terminou em cantoria, a sexta-feira que começou com um chopp e foi longe na prosa.</p>
+          </div>
+          <sc-if value="{{ showProv }}" hint-placeholder-val="{{ false }}">
+            <span style="display: inline-flex; margin-top: 16px; font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #C8641A; border: 1px dashed #C8641A; padding: 5px 9px; border-radius: 2px;">Provisório · trocar pela história real da casa</span>
+          </sc-if>
+          <div style="display: flex; align-items: center; gap: 18px; margin-top: 32px;">
+            <img src="assets/ilustra-whisky-tinta.png" alt="" style="width: 72px; height: auto;">
+            <span style="font-family: var(--font-heading); font-style: italic; font-size: 28px; color: #7d5411; line-height: 1.1;">— Chef Barão</span>
+          </div>
+        </div>
+        <div style="position: relative; padding: 0 0 clamp(40px, 6vw, 72px) clamp(32px, 5vw, 72px);">
+          <img class="plate" src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1000&h=1200&q=75" alt="Balcão do bar com luzes quentes e garrafas" style="display: block; width: 100%; aspect-ratio: 5 / 6; object-fit: cover;">
+          <img class="plate" src="https://images.unsplash.com/photo-1532634922-8fe0b757fb13?auto=format&fit=crop&w=600&h=600&q=75" alt="Amigos brindando com chopp sobre a mesa" style="position: absolute; left: 0; bottom: 0; width: 46%; aspect-ratio: 1; object-fit: cover; box-shadow: var(--shadow-lg);">
+        </div>
+      </div>
+      <div style="margin-top: clamp(64px, 9vw, 112px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 28px 40px;">
+        <div style="border-top: 1px solid rgba(23, 32, 28, 0.16); padding-top: 22px;">
+          <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411;">Almoço</div>
+          <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1.25; margin-top: 8px;">Todos os dias, com a cozinha do Chef Barão</div>
+        </div>
+        <div style="border-top: 1px solid rgba(23, 32, 28, 0.16); padding-top: 22px;">
+          <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411;">À noite</div>
+          <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1.25; margin-top: 8px;">Música, drinks, petiscos e boa prosa</div>
+        </div>
+        <div style="border-top: 1px solid rgba(23, 32, 28, 0.16); padding-top: 22px;">
+          <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411;">Celebre aqui</div>
+          <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1.25; margin-top: 8px;">Aniversários, confraternizações, comemorações e eventos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="almoco" data-screen-label="Almoço" style="background: #F6EED8; --color-surface: #FFF9E9; padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 64px); scroll-margin-top: 64px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <header style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 64px; margin-bottom: clamp(44px, 6vw, 80px);">
+        <div style="max-width: 680px;">
+          <div style="display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411; margin-bottom: 22px;"><span style="width: 32px; height: 1px; background: currentColor;"></span>Almoço · Chef Barão</div>
+          <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(40px, 5.2vw, 72px); line-height: 1.02; letter-spacing: -0.012em; text-wrap: balance;">Seu almoço merece ser especial.</h2>
+          <p style="margin: 22px 0 0; font-size: 17px; line-height: 1.7; color: #3D4841; max-width: 34em; text-wrap: pretty;">Todos os dias um novo convite para saborear pratos deliciosos, desfrutar de um ambiente acolhedor e compartilhar bons momentos à mesa!</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 23px; line-height: 1.2;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7d5411" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+            Todos os dias, das 11h30 às 14h30
+          </div>
+          <sc-if value="{{ showProv }}" hint-placeholder-val="{{ false }}">
+            <span style="display: inline-flex; font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #C8641A; border: 1px dashed #C8641A; padding: 5px 9px; border-radius: 2px;">Provisório · cardápio de almoço de exemplo</span>
+          </sc-if>
+        </div>
+      </header>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(48px, 7vw, 112px); align-items: start;">
+        <div style="position: relative; padding: 0 clamp(32px, 5vw, 72px) clamp(40px, 6vw, 72px) 0;">
+          <img class="plate" src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1000&h=1200&q=75" alt="Buffet com pratos quentes servidos em travessas" style="display: block; width: 100%; aspect-ratio: 5 / 6; object-fit: cover;">
+          <div style="position: absolute; right: 0; bottom: 0; width: 46%; box-sizing: border-box; padding: 10px; border: 1px solid rgba(182, 130, 53, 0.5); border-radius: 50%; background: #F6EED8;">
+            <img class="plate" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=600&h=600&q=75" alt="Saladas e acompanhamentos do buffet" style="display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%;">
+          </div>
+        </div>
+        <div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 16px;">
+            <div class="card" style="padding: 26px 26px 24px; gap: 0; border-color: #b68235;">
+              <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411;">Buffet por quilo</div>
+              <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}">
+                <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 14px;">
+                  <span style="font-size: 16px; color: #7d5411;">R$</span>
+                  <span style="font-family: var(--font-heading); font-size: 64px; font-weight: 400; line-height: 0.9; letter-spacing: -0.01em; font-variant-numeric: tabular-nums;">69,90</span>
+                  <span style="font-size: 15px; color: #5F6962;">/kg</span>
+                </div>
+              </sc-if>
+              <p style="margin: 14px 0 0; font-size: 14.5px; line-height: 1.6; color: #3D4841;">Monte o prato do seu jeito e pague pelo peso.</p>
+            </div>
+            <div class="card" style="padding: 26px 26px 24px; gap: 0; border-color: #b68235;">
+              <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411;">Buffet livre</div>
+              <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}">
+                <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 14px;">
+                  <span style="font-size: 16px; color: #7d5411;">R$</span>
+                  <span style="font-family: var(--font-heading); font-size: 64px; font-weight: 400; line-height: 0.9; letter-spacing: -0.01em; font-variant-numeric: tabular-nums;">42,90</span>
+                  <span style="font-size: 15px; color: #5F6962;">por pessoa</span>
+                </div>
+              </sc-if>
+              <p style="margin: 14px 0 0; font-size: 14.5px; line-height: 1.6; color: #3D4841;">Sirva-se à vontade, quantas vezes quiser.</p>
+            </div>
+          </div>
+          <p style="margin: 14px 0 0; font-size: 13px; color: #5F6962;">Bebidas à parte.</p>
+          <div style="margin-top: 40px;">
+            <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411; padding-bottom: 12px; border-bottom: 1px solid rgba(23, 32, 28, 0.16);">No buffet</div>
+            <div style="padding: 16px 0; border-bottom: 1px solid rgba(23, 32, 28, 0.1);">
+              <div style="font-family: var(--font-heading); font-size: 23px; font-weight: 500; line-height: 1.2;">Saladas e entradas</div>
+              <p style="margin: 4px 0 0; font-size: 14px; line-height: 1.55; color: #5F6962;">Folhas da estação, legumes, maionese da casa, salpicão e conservas</p>
+            </div>
+            <div style="padding: 16px 0; border-bottom: 1px solid rgba(23, 32, 28, 0.1);">
+              <div style="font-family: var(--font-heading); font-size: 23px; font-weight: 500; line-height: 1.2;">Pratos quentes</div>
+              <p style="margin: 4px 0 0; font-size: 14px; line-height: 1.55; color: #5F6962;">Arroz, feijão, massas, polenta frita, farofa e legumes refogados</p>
+            </div>
+            <div style="padding: 16px 0; border-bottom: 1px solid rgba(23, 32, 28, 0.1);">
+              <div style="font-family: var(--font-heading); font-size: 23px; font-weight: 500; line-height: 1.2;">Carnes</div>
+              <p style="margin: 4px 0 0; font-size: 14px; line-height: 1.55; color: #5F6962;">Bife acebolado, frango assado, carne de panela e filé de peixe</p>
+            </div>
+            <div style="padding: 16px 0;">
+              <div style="font-family: var(--font-heading); font-size: 23px; font-weight: 500; line-height: 1.2;">Sobremesas</div>
+              <p style="margin: 4px 0 0; font-size: 14px; line-height: 1.55; color: #5F6962;">Pudim de leite, sagu com creme e frutas da estação</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: clamp(64px, 8vw, 104px);">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 10px 40px; margin-bottom: 26px;">
+          <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05;">Prato do dia</h3>
+          <p style="margin: 0; font-size: 15px; color: #5F6962;">Todo dia um prato especial no buffet.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: {{ semanaCols }}; gap: 24px 28px;">
+          <sc-for list="{{ semanaAlmoco }}" as="d" hint-placeholder-count="7">
+            <div style="border-top: 1px solid {{ d.line }}; padding-top: 16px;">
+              <div style="display: flex; align-items: center; gap: 10px; min-height: 22px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: {{ d.cor }};">
+                {{ d.dia }}
+                <sc-if value="{{ d.hoje }}" hint-placeholder-val="{{ false }}">
+                  <span class="tag tag-outline" style="font-size: 10px; letter-spacing: 0.08em; padding: 1px 7px; color: #7d5411; border-color: #b68235;">Hoje</span>
+                </sc-if>
+              </div>
+              <div style="font-family: var(--font-heading); font-size: 22px; font-weight: 500; line-height: 1.25; margin-top: 8px; text-wrap: balance;">{{ d.prato }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cardapio" data-screen-label="Cardápio da noite" style="--color-bg: #0E2D20; --color-surface: #143B2A; --color-text: #FFF9E9; --color-accent: #D9A441; --color-divider: rgba(255, 249, 233, 0.16); background: #0E2D20; color: #FFF9E9; padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 64px); scroll-margin-top: 64px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <header style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 64px; margin-bottom: clamp(44px, 6vw, 80px);">
+        <div style="max-width: 660px;">
+          <div style="display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #D9A441; margin-bottom: 22px;"><span style="width: 32px; height: 1px; background: currentColor;"></span>Cardápio da noite</div>
+          <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(40px, 5.2vw, 72px); line-height: 1.02; letter-spacing: -0.012em; text-wrap: balance;">À noite, a cozinha acompanha a prosa.</h2>
+          <p style="margin: 22px 0 0; font-size: 17px; line-height: 1.7; color: #E4DCC6; max-width: 34em; text-wrap: pretty;">Petiscos para dividir, hambúrgueres, xis, lanches e pastéis, servidos à noite junto com o bar.</p>
+        </div>
+        <a class="btn btn-secondary" href="assets/cardapio-noite-barao.pdf" target="_blank" rel="noopener" onClick="{{ abrirPdf }}" style="min-height: 46px; padding: 0 20px; font-size: 16px; color: #FFF9E9;">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
+          Cardápio completo em PDF
+        </a>
+      </header>
+      <div style="display: grid; grid-template-columns: {{ cardapioCols }}; gap: clamp(40px, 6vw, 88px); align-items: start;">
+        <figure style="margin: 0; position: {{ stickyPos }}; top: 96px; display: flex; flex-direction: column; align-items: center; gap: 22px;">
+          <div style="width: min(100%, 500px); box-sizing: border-box; padding: 16px; border: 1px solid rgba(217, 164, 65, 0.45); border-radius: 50%;">
+            <img class="plate" ref="{{ fotoRef }}" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1000&h=1000&q=75" alt="{{ cat.label }}" style="display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%;">
+          </div>
+          <figcaption style="margin: 0; text-align: center; font-size: 14px; color: #C9C3AE;">
+            <span style="display: block; font-family: var(--font-heading); font-style: italic; font-size: 26px; color: #FFF9E9; margin-bottom: 2px;">{{ cat.label }}</span>
+            {{ cat.nota }}
+          </figcaption>
+        </figure>
+        <div data-lista="cardapio" style="border: 1px solid rgba(255, 249, 233, 0.16); border-radius: 4px; padding: clamp(20px, 3vw, 40px);">
+          <div role="tablist" aria-label="Categorias do cardápio" style="display: flex; flex-wrap: wrap; gap: 2px 22px; border-bottom: 1px solid rgba(255, 249, 233, 0.16); margin-bottom: 6px;">
+            <sc-for list="{{ cardapioTabs }}" as="t" hint-placeholder-count="8">
+              <button type="button" role="tab" aria-selected="{{ t.sel }}" onClick="{{ t.select }}" style="appearance: none; background: none; border: 0; border-bottom: 1px solid {{ t.line }}; margin-bottom: -1px; padding: 10px 0 12px; cursor: pointer; font-family: var(--font-heading); font-size: 19px; font-weight: 500; color: {{ t.color }};" style-hover="color: #D9A441;">{{ t.label }}</button>
+            </sc-for>
+          </div>
+          <sc-for list="{{ cat.itens }}" as="item" hint-placeholder-count="5">
+            <div style="padding: 18px 0; border-bottom: 1px solid rgba(255, 249, 233, 0.1);">
+              <div style="display: flex; align-items: baseline; gap: 12px;">
+                <span style="font-family: var(--font-heading); font-size: 23px; font-weight: 500; line-height: 1.2;">{{ item.nome }}</span>
+                <sc-if value="{{ item.hasTag }}" hint-placeholder-val="{{ false }}">
+                  <span class="tag tag-outline" style="white-space: nowrap; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase;">{{ item.tag }}</span>
+                </sc-if>
+                <span aria-hidden="true" style="flex: 1 1 24px; min-width: 24px; border-bottom: 1px dotted rgba(255, 249, 233, 0.32); transform: translateY(-5px);"></span>
+                <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}">
+                  <span style="font-variant-numeric: tabular-nums; color: #D9A441; white-space: nowrap; font-size: 16px;">{{ item.precoFmt }}</span>
+                </sc-if>
+              </div>
+              <sc-if value="{{ item.hasDesc }}" hint-placeholder-val="{{ true }}">
+                <p style="margin: 5px 0 0; color: #C9C3AE; font-size: 14px; line-height: 1.55; max-width: 88%; text-wrap: pretty;">{{ item.desc }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+          <p style="margin: 20px 0 0; font-size: 12.5px; color: #C9C3AE;">Valores em reais. Preços sujeitos a alteração.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="drinks" data-screen-label="Drinks" style="background: #FFF9E9; padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 64px) clamp(72px, 9vw, 120px); scroll-margin-top: 64px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <header style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 48px;">
+        <div style="display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411;"><span style="width: 32px; height: 1px; background: currentColor;"></span>Carta de drinks</div>
+        <p style="margin: 0; font-family: var(--font-heading); font-style: italic; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.2; color: #3D4841;">No Barão, o drink é um capítulo à parte.</p>
+      </header>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); column-gap: clamp(14px, 3vw, 48px); margin-top: clamp(20px, 3vw, 40px);">
+        <h2 style="grid-column: 1 / -1; grid-row: 1; margin: 0; text-align: center; font-family: var(--font-heading); font-weight: 400; font-size: clamp(104px, 22vw, 340px); line-height: 0.78; letter-spacing: -0.02em; color: #C8641A;">Drinks</h2>
+        <figure style="grid-column: 2; grid-row: 1 / span 2; margin: calc(clamp(104px, 22vw, 340px) * 0.36) 0 0; position: relative; z-index: 1;">
+          <img class="plate" src="https://images.unsplash.com/photo-1609951651556-5334e2706168?auto=format&fit=crop&w=700&h=980&q=75" alt="Drink Barão com alecrim e limão" style="display: block; width: clamp(130px, 19vw, 290px); aspect-ratio: 0.72; object-fit: cover; border-radius: 999px 999px 4px 4px; box-shadow: var(--shadow-lg);">
+        </figure>
+        <div style="grid-column: 1; grid-row: 2; align-self: end; justify-self: end; text-align: right; padding-bottom: 6px;">
+          <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: clamp(22px, 2.8vw, 40px); line-height: 1.05;">Drink Barão</h3>
+          <span class="tag tag-outline" style="margin-top: 12px; white-space: nowrap; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #7d5411; border-color: #b68235;">Assinatura da casa</span>
+        </div>
+        <div style="grid-column: 3; grid-row: 2; align-self: end; padding-bottom: 6px;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #5F6962; margin-bottom: 8px;">Leva</div>
+          <div style="font-family: var(--font-heading); font-size: clamp(18px, 2vw, 26px); line-height: 1.3;">Gin<br>Energético<br>Frutas</div>
+          <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-top: 10px; font-variant-numeric: tabular-nums; color: #7d5411; font-size: 15.5px;">R$ 35,00</div>
+          </sc-if>
+        </div>
+      </div>
+
+      <div style="margin-top: clamp(72px, 9vw, 120px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: clamp(32px, 3vw, 44px);">
+        <article style="display: flex; flex-direction: column; gap: 8px;">
+          <img class="plate" src="https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=600&h=800&q=75" alt="Aperol Spritz sendo servido" style="display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 999px 999px 4px 4px; margin-bottom: 12px;">
+          <div style="display: flex; align-items: baseline; gap: 12px;">
+            <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: 27px; line-height: 1.15;">Aperol Spritz</h3>
+            <span aria-hidden="true" style="flex: 1 1 20px; border-bottom: 1px dotted rgba(23, 32, 28, 0.35); transform: translateY(-5px);"></span>
+            <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}"><span style="font-variant-numeric: tabular-nums; color: #7d5411; white-space: nowrap; font-size: 15.5px;">R$ 35,00</span></sc-if>
+          </div>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #5F6962;">Aperol, água com gás, espumante e gelo</p>
+        </article>
+        <article style="display: flex; flex-direction: column; gap: 8px;">
+          <img class="plate" src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=600&h=800&q=75" alt="Negroni com casca de laranja" style="display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 999px 999px 4px 4px; margin-bottom: 12px;">
+          <div style="display: flex; align-items: baseline; gap: 12px;">
+            <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: 27px; line-height: 1.15;">Negroni</h3>
+            <span aria-hidden="true" style="flex: 1 1 20px; border-bottom: 1px dotted rgba(23, 32, 28, 0.35); transform: translateY(-5px);"></span>
+            <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}"><span style="font-variant-numeric: tabular-nums; color: #7d5411; white-space: nowrap; font-size: 15.5px;">R$ 30,00</span></sc-if>
+          </div>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #5F6962;">Gin, Campari, vermute rosso, laranja e gelo</p>
+        </article>
+        <article style="display: flex; flex-direction: column; gap: 8px;">
+          <img class="plate" src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&h=800&q=75" alt="Mojito com hortelã" style="display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 999px 999px 4px 4px; margin-bottom: 12px;">
+          <div style="display: flex; align-items: baseline; gap: 12px;">
+            <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: 27px; line-height: 1.15;">Mojito</h3>
+            <span aria-hidden="true" style="flex: 1 1 20px; border-bottom: 1px dotted rgba(23, 32, 28, 0.35); transform: translateY(-5px);"></span>
+            <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}"><span style="font-variant-numeric: tabular-nums; color: #7d5411; white-space: nowrap; font-size: 15.5px;">R$ 30,00</span></sc-if>
+          </div>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #5F6962;">Rum, água com gás, hortelã e gelo</p>
+        </article>
+        <article style="display: flex; flex-direction: column; gap: 8px;">
+          <img class="plate" src="https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=600&h=800&q=75" alt="Caipiras de morango com limão" style="display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 999px 999px 4px 4px; margin-bottom: 12px;">
+          <div style="display: flex; align-items: baseline; gap: 12px;">
+            <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 500; font-size: 27px; line-height: 1.15;">Caipira de morango e alecrim</h3>
+            <span aria-hidden="true" style="flex: 1 1 20px; border-bottom: 1px dotted rgba(23, 32, 28, 0.35); transform: translateY(-5px);"></span>
+            <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}"><span style="font-variant-numeric: tabular-nums; color: #7d5411; white-space: nowrap; font-size: 15.5px;">R$ 25,00</span></sc-if>
+          </div>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #5F6962;">Com vodka ou cachaça</p>
+        </article>
+      </div>
+
+      <div style="margin-top: clamp(72px, 10vw, 128px); border-top: 1px solid rgba(23, 32, 28, 0.16); padding-top: clamp(36px, 5vw, 56px);">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px 40px;">
+          <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05;">A carta completa</h3>
+          <div role="tablist" aria-label="Seções da carta" style="display: flex; flex-wrap: wrap; gap: 2px 22px;">
+            <sc-for list="{{ cartaTabs }}" as="t" hint-placeholder-count="7">
+              <button type="button" role="tab" aria-selected="{{ t.sel }}" onClick="{{ t.select }}" style="appearance: none; background: none; border: 0; border-bottom: 1px solid {{ t.line }}; padding: 8px 0 10px; cursor: pointer; font-family: var(--font-heading); font-size: 19px; font-weight: 500; color: {{ t.color }};" style-hover="color: #C8641A;">{{ t.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <sc-if value="{{ carta.hasNota }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 18px 0 0; font-family: var(--font-heading); font-style: italic; font-size: 21px; color: #7d5411;">{{ carta.nota }}</p>
+        </sc-if>
+        <div data-lista="carta" style="columns: 2 320px; column-gap: clamp(32px, 5vw, 80px); margin-top: 20px;">
+          <sc-for list="{{ carta.itens }}" as="item" hint-placeholder-count="8">
+            <div style="break-inside: avoid; padding: 14px 0; border-bottom: 1px solid rgba(23, 32, 28, 0.1);">
+              <div style="display: flex; align-items: baseline; gap: 12px;">
+                <span style="font-family: var(--font-heading); font-size: 22px; font-weight: 500; line-height: 1.2;">{{ item.nome }}</span>
+                <sc-if value="{{ item.hasTag }}" hint-placeholder-val="{{ false }}">
+                  <span class="tag tag-outline" style="white-space: nowrap; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7d5411; border-color: #b68235;">{{ item.tag }}</span>
+                </sc-if>
+                <span aria-hidden="true" style="flex: 1 1 24px; min-width: 24px; border-bottom: 1px dotted rgba(23, 32, 28, 0.35); transform: translateY(-5px);"></span>
+                <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}">
+                  <span style="font-variant-numeric: tabular-nums; color: #7d5411; white-space: nowrap; font-size: 15.5px;">{{ item.precoFmt }}</span>
+                </sc-if>
+              </div>
+              <sc-if value="{{ item.hasDesc }}" hint-placeholder-val="{{ false }}">
+                <p style="margin: 4px 0 0; font-size: 14px; line-height: 1.55; color: #5F6962;">{{ item.desc }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="happy-hour" data-screen-label="Happy hour" style="background: #F6EED8; --color-surface: #FFF9E9; padding: clamp(64px, 9vw, 120px) clamp(20px, 5vw, 64px); scroll-margin-top: 64px;">
+    <div style="max-width: 1240px; margin: 0 auto; border: 1px solid #b68235; padding: 7px; border-radius: 2px;">
+      <div style="border: 1px solid rgba(182, 130, 53, 0.45); padding: clamp(28px, 5vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(36px, 5vw, 72px); align-items: center;">
+        <img src="assets/ilustra-chopp-tinta.png" alt="Ilustração de uma mão erguendo uma caneca de chopp" style="width: min(100%, 250px); height: auto; justify-self: center;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411; margin-bottom: 20px;"><span style="width: 32px; height: 1px; background: currentColor;"></span>Happy hour</div>
+          <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(40px, 4.6vw, 64px); line-height: 1.02; letter-spacing: -0.012em; text-wrap: balance;">Para começar a noite</h2>
+          <p style="margin: 18px 0 0; font-size: 16.5px; line-height: 1.7; color: #3D4841; text-wrap: pretty;">Chopp gelado, caipira de litro e petiscos para dividir com quem chegou junto.</p>
+          <div style="display: flex; align-items: center; gap: 10px; margin-top: 22px; font-family: var(--font-heading); font-size: 23px; line-height: 1.2;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7d5411" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+            Segunda a sexta, das 17h às 20h
+          </div>
+          <sc-if value="{{ showProv }}" hint-placeholder-val="{{ false }}">
+            <span style="display: inline-flex; margin-top: 14px; font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #C8641A; border: 1px dashed #C8641A; padding: 5px 9px; border-radius: 2px;">Provisório · confirmar dias e horário</span>
+          </sc-if>
+          <div style="margin-top: 28px;">
+            <a class="btn btn-primary" href="{{ waHappy }}" target="_blank" rel="noopener" style="min-height: 46px; padding: 0 22px; font-size: 16px;">Reservar para o happy hour</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411; padding-bottom: 12px; border-bottom: 1px solid rgba(23, 32, 28, 0.16);">Para dividir</div>
+          <div style="padding: 14px 0; border-bottom: 1px solid rgba(23, 32, 28, 0.1); display: flex; align-items: baseline; gap: 12px;">
+            <span style="font-family: var(--font-heading); font-size: 22px; font-weight: 500; line-height: 1.2;">Torre de chopp Pilsen 2,5 L</span>
+            <span aria-hidden="true" style="flex: 1 1 20px; min-width: 20px; border-bottom: 1px dotted rgba(23, 32, 28, 0.35); transform: translateY(-5px);"></span>
+            <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}"><span style="font-variant-numeric: tabular-nums; color: #7d5411; white-space: nowrap; font-size: 15.5px;">R$ 95,00</span></sc-if>
+          </div>
+          <div style="padding: 14px 0; border-bottom: 1px solid rgba(23, 32, 28, 0.1); display: flex; align-items: baseline; gap: 12px;">
+            <span style="font-family: var(--font-heading); font-size: 22px; font-weight: 500; line-height: 1.2;">Caipira tripla (1 L)</span>
+            <span aria-hidden="true" style="flex: 1 1 20px; min-width: 20px; border-bottom: 1px dotted rgba(23, 32, 28, 0.35); transform: translateY(-5px);"></span>
+            <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}"><span style="font-variant-numeric: tabular-nums; color: #7d5411; white-space: nowrap; font-size: 15.5px;">R$ 70,00</span></sc-if>
+          </div>
+          <div style="padding: 14px 0; border-bottom: 1px solid rgba(23, 32, 28, 0.1);">
+            <div style="display: flex; align-items: baseline; gap: 12px;">
+              <span style="font-family: var(--font-heading); font-size: 22px; font-weight: 500; line-height: 1.2;">Picado Barão</span>
+              <span aria-hidden="true" style="flex: 1 1 20px; min-width: 20px; border-bottom: 1px dotted rgba(23, 32, 28, 0.35); transform: translateY(-5px);"></span>
+              <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}"><span style="font-variant-numeric: tabular-nums; color: #7d5411; white-space: nowrap; font-size: 15.5px;">R$ 98,00</span></sc-if>
+            </div>
+            <p style="margin: 4px 0 0; font-size: 13.5px; line-height: 1.55; color: #5F6962;">Batata frita, bife, cebola empanada, calabresa, salamito, linguicinha, ovos, tomate cereja, azeitona e queijo</p>
+          </div>
+          <div style="padding: 14px 0; display: flex; align-items: baseline; gap: 12px;">
+            <span style="font-family: var(--font-heading); font-size: 22px; font-weight: 500; line-height: 1.2;">Polenta palito</span>
+            <span aria-hidden="true" style="flex: 1 1 20px; min-width: 20px; border-bottom: 1px dotted rgba(23, 32, 28, 0.35); transform: translateY(-5px);"></span>
+            <sc-if value="{{ showPrecos }}" hint-placeholder-val="{{ true }}"><span style="font-variant-numeric: tabular-nums; color: #7d5411; white-space: nowrap; font-size: 15.5px;">R$ 35,00</span></sc-if>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="agenda" data-screen-label="Agenda" style="--color-bg: #0E2D20; --color-surface: #143B2A; --color-text: #FFF9E9; --color-accent: #D9A441; --color-divider: rgba(255, 249, 233, 0.16); background: #0E2D20; color: #FFF9E9; padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 64px); scroll-margin-top: 64px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: {{ agendaCols }}; gap: clamp(48px, 7vw, 104px); align-items: start;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #D9A441; margin-bottom: 22px;"><span style="width: 32px; height: 1px; background: currentColor;"></span>Agenda</div>
+        <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(40px, 5.2vw, 72px); line-height: 1.02; letter-spacing: -0.012em;">Música ao vivo</h2>
+        <p style="margin: 22px 0 0; font-size: 17px; line-height: 1.7; color: #E4DCC6; max-width: 30em; text-wrap: pretty;">Confira a programação das próximas noites e garanta sua mesa.</p>
+        <div style="position: relative; margin-top: 44px; padding: 0 22% 14% 0; max-width: 520px;">
+          <img class="plate" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&h=1000&q=75" alt="Microfone vintage no palco" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 999px 999px 4px 4px;">
+          <img class="plate" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=500&h=500&q=75" alt="Violão sendo tocado" style="position: absolute; right: 0; bottom: 0; width: 46%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);">
+        </div>
+      </div>
+      <div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 16px;">
+          <span style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #D9A441;">Próximas noites</span>
+          <sc-if value="{{ showProv }}" hint-placeholder-val="{{ false }}">
+            <span style="display: inline-flex; font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #F0A35E; border: 1px dashed #F0A35E; padding: 5px 9px; border-radius: 2px;">Provisório · agenda de exemplo</span>
+          </sc-if>
+        </div>
+        <sc-for list="{{ agenda }}" as="ev" hint-placeholder-count="5">
+          <article style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; padding: 24px 0; border-top: 1px solid rgba(255, 249, 233, 0.16);">
+            <div style="width: 64px; flex: 0 0 auto; text-align: center;">
+              <div style="font-family: var(--font-heading); font-size: 50px; line-height: 0.9; font-variant-numeric: tabular-nums;">{{ ev.dia }}</div>
+              <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #D9A441; margin-top: 6px;">{{ ev.mes }}</div>
+            </div>
+            <div style="flex: 1 1 200px; min-width: 0;">
+              <div style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #C9C3AE;">{{ ev.semana }} · {{ ev.hora }}</div>
+              <h3 style="margin: 4px 0 0; font-family: var(--font-heading); font-weight: 500; font-size: 30px; line-height: 1.15;">{{ ev.titulo }}</h3>
+              <div style="font-size: 14px; color: #C9C3AE; margin-top: 2px;">{{ ev.atracao }}</div>
+            </div>
+            <a class="btn btn-primary" href="{{ ev.wa }}" target="_blank" rel="noopener" style="min-height: 44px; padding: 0 18px; font-size: 15px;">Reservar mesa</a>
+          </article>
+        </sc-for>
+        <div style="border-top: 1px solid rgba(255, 249, 233, 0.16); padding-top: 24px;">
+          <a href="https://www.instagram.com/baraobareprosa/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; color: #D9A441; text-decoration: none; font-family: var(--font-heading); font-size: 20px; font-weight: 500;" style-hover="color: #FFF9E9;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><path d="M17.5 6.5h.01"></path></svg>
+            Programação completa no Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservas" data-screen-label="Reservas" style="background: #FFF9E9; padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 64px); scroll-margin-top: 64px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(48px, 7vw, 112px); align-items: start;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411; margin-bottom: 22px;"><span style="width: 32px; height: 1px; background: currentColor;"></span>Reservas</div>
+        <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(40px, 5vw, 66px); line-height: 1.04; letter-spacing: -0.012em; text-wrap: balance;">Faça sua reserva e venha comemorar com a gente!</h2>
+        <p style="margin: 22px 0 0; font-size: 17px; line-height: 1.7; color: #3D4841; text-wrap: pretty;">Celebre aqui, e transforme cada ocasião em uma experiência inesquecível!</p>
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-top: 24px; font-family: var(--font-heading); font-size: 22px;">
+          <span>Aniversários</span><span style="color: #b68235;">·</span><span>Confraternizações</span><span style="color: #b68235;">·</span><span>Comemorações</span><span style="color: #b68235;">·</span><span>Eventos</span>
+        </div>
+        <img class="plate" src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1100&h=740&q=75" alt="Salão do bar com luminárias acesas" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; margin-top: 40px;">
+        <p style="margin: 26px 0 0; font-family: var(--font-heading); font-style: italic; font-size: 27px; line-height: 1.25; color: #7d5411;">Momentos especiais merecem um lugar à altura.</p>
+      </div>
+      <div class="card elev-sm" style="padding: clamp(24px, 3.4vw, 44px); gap: 20px;">
+        <div>
+          <div style="font-family: var(--font-heading); font-size: 32px; line-height: 1.1;">Pedido de reserva</div>
+          <p style="margin: 8px 0 0; font-size: 14.5px; line-height: 1.6; color: #5F6962;">Preencha e envie pelo WhatsApp. A equipe do Barão confirma a sua mesa por lá.</p>
+        </div>
+        <div class="field">
+          <label for="r-nome">Nome</label>
+          <input id="r-nome" class="input" type="text" autocomplete="name" placeholder="Como devemos chamar você?" value="{{ nome }}" onChange="{{ setNome }}" style="min-height: 46px; font-size: 15px;">
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 16px;">
+          <div class="field">
+            <label for="r-data">Data</label>
+            <input id="r-data" class="input" type="date" min="{{ hoje }}" value="{{ data }}" onChange="{{ setData }}" style="min-height: 46px; font-size: 15px;">
+          </div>
+          <div class="field">
+            <label for="r-hora">Horário</label>
+            <select id="r-hora" class="input" value="{{ hora }}" onChange="{{ setHora }}" style="min-height: 46px; font-size: 15px;">{{ horaOptions }}</select>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 16px;">
+          <div class="field">
+            <label>Pessoas</label>
+            <div style="display: flex; align-items: center; min-height: 46px; border: 1px solid var(--color-divider); border-radius: var(--radius-md);">
+              <button type="button" class="btn btn-ghost" onClick="{{ menosPessoas }}" aria-label="Menos pessoas" style="width: 46px; height: 44px; padding: 0;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg>
+              </button>
+              <span aria-live="polite" style="flex: 1; text-align: center; font-size: 16px; font-variant-numeric: tabular-nums;">{{ pessoas }}</span>
+              <button type="button" class="btn btn-ghost" onClick="{{ maisPessoas }}" aria-label="Mais pessoas" style="width: 46px; height: 44px; padding: 0;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="r-ocasiao">Ocasião</label>
+            <select id="r-ocasiao" class="input" value="{{ ocasiao }}" onChange="{{ setOcasiao }}" style="min-height: 46px; font-size: 15px;">
+              <option value="Nenhuma em especial">Nenhuma em especial</option>
+              <option value="Aniversário">Aniversário</option>
+              <option value="Confraternização">Confraternização</option>
+              <option value="Comemoração">Comemoração</option>
+              <option value="Evento">Evento</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Período</label>
+          <div class="seg" role="radiogroup" aria-label="Período" style="display: flex;">
+            <sc-for list="{{ periodos }}" as="p" hint-placeholder-count="3">
+              <label class="seg-opt" style="flex: 1; justify-content: center; min-height: 44px; font-size: 14px;"><input type="radio" name="periodo" checked="{{ p.checked }}" onChange="{{ p.select }}">{{ p.label }}</label>
+            </sc-for>
+          </div>
+        </div>
+        <div class="field">
+          <label for="r-obs">Observações</label>
+          <textarea id="r-obs" class="input" rows="3" placeholder="Ex.: mesa perto da música, cadeirinha para criança" value="{{ obs }}" onChange="{{ setObs }}" style="font-size: 15px;"></textarea>
+        </div>
+        <div style="border-top: 1px solid var(--color-divider); padding-top: 18px;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #5F6962;">Prévia da mensagem</div>
+          <p style="margin: 10px 0 0; white-space: pre-line; font-style: italic; font-size: 14.5px; line-height: 1.6; color: #3D4841;">{{ mensagem }}</p>
+        </div>
+        <a class="btn btn-primary btn-block" href="{{ waReserva }}" target="_blank" rel="noopener" style="min-height: 52px; font-size: 17px; margin-top: 0;">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+          Enviar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" data-screen-label="Localização" style="--color-bg: #0E2D20; --color-surface: #143B2A; --color-text: #FFF9E9; --color-accent: #D9A441; --color-divider: rgba(255, 249, 233, 0.16); background: #0E2D20; color: #FFF9E9; padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 64px); scroll-margin-top: 64px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: clamp(48px, 7vw, 104px); align-items: center;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #D9A441; margin-bottom: 22px;"><span style="width: 32px; height: 1px; background: currentColor;"></span>Localização e horários</div>
+        <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(44px, 5.6vw, 80px); line-height: 1; letter-spacing: -0.012em;">Chega mais!</h2>
+        <address style="font-style: normal; margin-top: 26px;">
+          <div style="font-family: var(--font-heading); font-size: clamp(28px, 2.8vw, 36px); line-height: 1.15;">Rua Barão do Triunfo, 1313</div>
+          <div style="font-size: 16px; color: #C9C3AE; margin-top: 4px;">Venâncio Aires · Rio Grande do Sul</div>
+        </address>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px;">
+          <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Rua%20Bar%C3%A3o%20do%20Triunfo%2C%201313%2C%20Ven%C3%A2ncio%20Aires%20-%20RS" target="_blank" rel="noopener" style="min-height: 46px; padding: 0 20px; font-size: 16px;">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2 13 21 11 13 3 11Z"></path></svg>
+            Como chegar
+          </a>
+          <a class="btn btn-secondary" href="{{ waGeral }}" target="_blank" rel="noopener" style="min-height: 46px; padding: 0 20px; font-size: 16px; color: #FFF9E9;">Chamar no WhatsApp</a>
+        </div>
+        <table class="table" style="margin-top: 40px; font-size: 15px;">
+          <thead>
+            <tr><th>Turno</th><th>Dias</th><th>Horário</th></tr>
+          </thead>
+          <tbody>
+            <tr><td style="font-family: var(--font-heading); font-size: 21px;">Almoço</td><td>Todos os dias</td><td style="font-variant-numeric: tabular-nums;">11h30 às 14h30</td></tr>
+            <tr><td style="font-family: var(--font-heading); font-size: 21px;">Noite</td><td>Terça a domingo</td><td style="font-variant-numeric: tabular-nums;">A partir das 18h</td></tr>
+          </tbody>
+        </table>
+        <sc-if value="{{ showProv }}" hint-placeholder-val="{{ false }}">
+          <span style="display: inline-flex; margin-top: 14px; font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #F0A35E; border: 1px dashed #F0A35E; padding: 5px 9px; border-radius: 2px;">Provisório · confirmar horários, WhatsApp e Instagram</span>
+        </sc-if>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 18px 24px; margin-top: 32px;">
+          <a href="{{ waGeral }}" target="_blank" rel="noopener" style="display: flex; gap: 12px; color: #FFF9E9; text-decoration: none;" style-hover="color: #D9A441;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D9A441" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto; margin-top: 3px;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+            <span><span style="display: block; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #C9C3AE;">WhatsApp</span><span style="font-size: 15px;">{{ telefone }}</span></span>
+          </a>
+          <a href="https://www.instagram.com/baraobareprosa/" target="_blank" rel="noopener" style="display: flex; gap: 12px; color: #FFF9E9; text-decoration: none;" style-hover="color: #D9A441;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D9A441" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto; margin-top: 3px;"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><path d="M17.5 6.5h.01"></path></svg>
+            <span><span style="display: block; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #C9C3AE;">Instagram</span><span style="font-size: 15px;">@baraobareprosa</span></span>
+          </a>
+          <a href="https://bio.site/barao.bareprosa" target="_blank" rel="noopener" style="display: flex; gap: 12px; color: #FFF9E9; text-decoration: none;" style-hover="color: #D9A441;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D9A441" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto; margin-top: 3px;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            <span><span style="display: block; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #C9C3AE;">Links</span><span style="font-size: 15px;">bio.site/barao.bareprosa</span></span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <iframe class="plate" title="Mapa: Rua Barão do Triunfo, 1313, Venâncio Aires" src="https://maps.google.com/maps?q=Rua%20Bar%C3%A3o%20do%20Triunfo%2C%201313%2C%20Ven%C3%A2ncio%20Aires%20-%20RS&z=16&output=embed" loading="lazy" style="display: block; width: 100%; aspect-ratio: 4 / 5; border-style: solid; border-radius: 2px; background: #143B2A;"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #0A2118; color: #E4DCC6; --color-text: #FFF9E9; --color-accent: #D9A441; --color-divider: rgba(255, 249, 233, 0.14); padding: clamp(64px, 8vw, 104px) clamp(20px, 5vw, 64px) 36px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 40px; align-items: start;">
+        <div>
+          <span style="position: relative; display: block; cursor: pointer; width: 112px;"><span style="position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;">Barão</span>
+            <span data-logo="rodape" aria-hidden="true" style="position: relative; display: block; width: 112px; aspect-ratio: 199 / 234; margin-left: 0px;">
+              <img data-p="cartola" src="assets/logo-partes/cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%;">
+              <img data-p="b" src="assets/logo-partes/b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto;">
+              <img data-p="a" src="assets/logo-partes/a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto;">
+              <img data-p="r" src="assets/logo-partes/r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto;">
+              <img data-p="atil" src="assets/logo-partes/atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto;">
+              <img data-p="o" src="assets/logo-partes/o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto;">
+              <img data-p="bigode" src="assets/logo-partes/bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto;">
+              <img data-p="corrente" src="assets/logo-partes/corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%;">
+              <img data-p="gravata" src="assets/logo-partes/gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto;">
+              <svg data-p="brilho" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; left: 71%; top: 42.9%; width: 12%; height: auto; opacity: 0; transform-origin: 50% 50%; overflow: visible;"><path fill="#FFF9E9" d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>
+            </span>
+          </span>
+          <p style="margin: 18px 0 0; font-family: var(--font-heading); font-style: italic; font-size: 22px; color: #D9A441;">Bar e Prosa</p>
+        </div>
+        <nav aria-label="Rodapé" style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #D9A441; margin-bottom: 4px;">Navegue</span>
+          <a href="#a-casa" style="color: #E4DCC6; text-decoration: none; font-size: 15px;" style-hover="color: #D9A441;">A Casa</a>
+          <a href="#almoco" style="color: #E4DCC6; text-decoration: none; font-size: 15px;" style-hover="color: #D9A441;">Almoço</a>
+          <a href="#cardapio" style="color: #E4DCC6; text-decoration: none; font-size: 15px;" style-hover="color: #D9A441;">Cardápio da noite</a>
+          <a href="#drinks" style="color: #E4DCC6; text-decoration: none; font-size: 15px;" style-hover="color: #D9A441;">Carta de drinks</a>
+          <a href="#happy-hour" style="color: #E4DCC6; text-decoration: none; font-size: 15px;" style-hover="color: #D9A441;">Happy hour</a>
+          <a href="#agenda" style="color: #E4DCC6; text-decoration: none; font-size: 15px;" style-hover="color: #D9A441;">Agenda</a>
+          <a href="#reservas" style="color: #E4DCC6; text-decoration: none; font-size: 15px;" style-hover="color: #D9A441;">Reservas</a>
+        </nav>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
+          <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #D9A441; margin-bottom: 4px;">Visite</span>
+          <span>Rua Barão do Triunfo, 1313</span>
+          <span>Venâncio Aires/RS</span>
+          <span style="margin-top: 8px;">Almoço todos os dias</span>
+          <span>À noite a resenha começa</span>
+        </div>
+        <figure style="margin: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
+          <img src="assets/qr-instagram-creme.png" alt="QR code para o Instagram do Barão" style="width: 112px; height: 112px;">
+          <figcaption style="margin: 0; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #C9C3AE;">Não leia esse QR code</figcaption>
+        </figure>
+      </div>
+      <div style="margin-top: 56px; padding-top: 22px; border-top: 1px solid rgba(255, 249, 233, 0.14); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; font-size: 13px; color: #A9A491;">
+        <span>© 2026 Barão Bar e Prosa · Venâncio Aires/RS</span>
+        <span>Aprecie com moderação. Venda de bebidas alcoólicas proibida para menores de 18 anos.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsapp&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;555196805522&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contato&quot;}, &quot;mostrarPrecos&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Cardápio&quot;}, &quot;mostrarAbertura&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Abertura&quot;}, &quot;marcarProvisorios&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Revisão&quot;}}">
+class Component extends DCLogic {
+  state = {
+    vw: typeof window !== 'undefined' ? window.innerWidth : 1280,
+    scrolled: false, menuOpen: false, pdfOpen: false, pdfStatus: 'idle', intro: !(typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches), cat: 'petiscos', carta: 'drinks',
+    nome: '', data: '', hora: '20:00', pessoas: 2, periodo: 'Noite', ocasiao: 'Nenhuma em especial', obs: ''
+  };
+
+  componentDidMount() {
+    this._r = () => { const w = window.innerWidth; if (w !== this.state.vw) this.setState({ vw: w }); };
+    if (window.ResizeObserver) { this._ro = new ResizeObserver(() => { cancelAnimationFrame(this._raf); this._raf = requestAnimationFrame(this._r); }); this._ro.observe(document.documentElement); }
+    this._s = () => { const v = window.scrollY > 620; if (v !== this.state.scrolled) this.setState({ scrolled: v }); };
+    window.addEventListener('resize', this._r);
+    window.addEventListener('scroll', this._s, { passive: true });
+    this._k = (e) => { if (e.key === 'Escape' && (this.state.pdfOpen || this.state.menuOpen)) this.setState({ pdfOpen: false, menuOpen: false }); };
+    window.addEventListener('keydown', this._k);
+    this.reduz = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    this._loops = [];
+    this._ultCat = this.state.cat;
+    this._ultCarta = this.state.carta;
+    this.setupReveal();
+    this.setupHeroMotion();
+    this.setupParallax();
+    this.setupLogo();
+    this.ensureAnel();
+    if (!this.reduz && !this.introAtivo()) this.heroEntrance(0);
+    this._r(); this._s();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._r);
+    if (this._ro) this._ro.disconnect();
+    window.removeEventListener('keydown', this._k);
+    if (this._io) this._io.disconnect();
+    if (this._px) { window.removeEventListener('scroll', this._px); window.removeEventListener('resize', this._px); }
+    if (this._hov) { document.removeEventListener('pointerover', this._hov); document.removeEventListener('click', this._hov); }
+    clearInterval(this._idle);
+    (this._loops || []).forEach((a) => a.cancel());
+    if (this._pm) { const h = document.getElementById('inicio'); if (h) h.removeEventListener('pointermove', this._pm); }
+    if (this._intro) { this._intro.timers.forEach(clearTimeout); if (this._intro.off) this._intro.off(); }
+    document.body.style.overflow = '';
+    window.removeEventListener('scroll', this._s);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this._intro && !this._intro.done && !this.introAtivo()) this.endIntro();
+    if (!this.reduz) {
+      if (this._ultCat !== undefined && this._ultCat !== this.state.cat) this.animarLista('cardapio', true);
+      if (this._ultCarta !== undefined && this._ultCarta !== this.state.carta) this.animarLista('carta', false);
+    }
+    this._ultCat = this.state.cat;
+    this._ultCarta = this.state.carta;
+    this.ensureAnel();
+    const lock = !!(this.state.pdfOpen || this.state.menuOpen);
+    if (lock !== !!this._lock) { this._lock = lock; document.body.style.overflow = lock ? 'hidden' : ''; }
+  }
+
+  introAtivo() { return !!(this.state.intro && this.props.mostrarAbertura !== false); }
+
+  playIntro(root) {
+    const st = this._intro = { root, list: [], hero: [], timers: [], done: false };
+    const skip = () => this.skipIntro();
+    root.addEventListener('pointerdown', skip);
+    window.addEventListener('keydown', skip);
+    window.addEventListener('wheel', skip, { passive: true });
+    window.addEventListener('touchstart', skip, { passive: true });
+    st.off = () => {
+      root.removeEventListener('pointerdown', skip);
+      window.removeEventListener('keydown', skip);
+      window.removeEventListener('wheel', skip);
+      window.removeEventListener('touchstart', skip);
+    };
+    st.medalImg = document.querySelector('#inicio [data-logo="vivo"]');
+    if (st.medalImg) st.medalImg.style.opacity = '0';
+    const imgs = [...root.querySelectorAll('img')];
+    Promise.race([
+      Promise.all(imgs.map((i) => (i.decode ? i.decode() : Promise.resolve()).catch(() => {}))),
+      new Promise((r) => setTimeout(r, 1200))
+    ]).then(() => { if (!st.done && !st.skipping) this.introFase1(st); });
+  }
+
+  introFase1(st) {
+    const q = (k) => st.root.querySelector('[data-k="' + k + '"]');
+    const A = (n, kf, o) => { if (n && n.animate) st.list.push(n.animate(kf, Object.assign({ fill: 'both', easing: 'cubic-bezier(.22,.8,.24,1)' }, o))); };
+    const K = (n, start, frames) => {
+      const end = frames[frames.length - 1][0];
+      A(n, frames.map(([t, f]) => Object.assign({ offset: t / end }, f)), { duration: end, delay: start, easing: 'linear' });
+    };
+    const io = 'ease-in-out';
+    A(q('moldura'), [{ opacity: 0, transform: 'scale(1.025)' }, { opacity: 1, transform: 'none' }], { duration: 1000 });
+    ['b', 'a', 'r', 'atil', 'o'].forEach((k, i) => A(q(k), [{ opacity: 0, transform: 'translateY(24%)', filter: 'blur(6px)' }, { opacity: 1, transform: 'none', filter: 'blur(0px)' }], { duration: 600, delay: 120 + i * 75 }));
+    A(q('bigode'), [{ opacity: 0, transform: 'scaleX(0.15)' }, { opacity: 1, transform: 'none' }], { duration: 620, delay: 430 });
+    A(q('gravata'), [{ opacity: 0, transform: 'scale(0.3) rotate(-16deg)' }, { opacity: 1, transform: 'none' }], { duration: 640, delay: 540, easing: 'cubic-bezier(.34,1.56,.64,1)' });
+    K(q('corrente'), 540, [
+      [0, { opacity: 0, transform: 'rotate(0deg)' }],
+      [380, { opacity: 1, transform: 'rotate(0deg)' }],
+      [760, { opacity: 1, transform: 'rotate(0deg)', easing: io }],
+      [1060, { opacity: 1, transform: 'rotate(11deg)', easing: io }],
+      [1340, { opacity: 1, transform: 'rotate(-7deg)', easing: io }],
+      [1600, { opacity: 1, transform: 'rotate(4deg)', easing: io }],
+      [1840, { opacity: 1, transform: 'rotate(-2deg)', easing: io }],
+      [2040, { opacity: 1, transform: 'rotate(0.8deg)', easing: io }],
+      [2200, { opacity: 1, transform: 'rotate(0deg)' }]
+    ]);
+    K(q('cartola'), 560, [
+      [0, { opacity: 0, transform: 'translateY(-150%) rotate(-10deg)', easing: 'cubic-bezier(.3,.6,.35,1)' }],
+      [440, { opacity: 1, transform: 'translateY(3%) rotate(1.5deg)', easing: 'ease-out' }],
+      [580, { opacity: 1, transform: 'translateY(0%) rotate(0deg)' }],
+      [690, { opacity: 1, transform: 'translateY(0%) rotate(0deg)', easing: 'cubic-bezier(.3,0,.2,1)' }],
+      [950, { opacity: 1, transform: 'translateY(-18%) rotate(-14deg)' }],
+      [1130, { opacity: 1, transform: 'translateY(-18%) rotate(-14deg)', easing: 'cubic-bezier(.5,0,.3,1)' }],
+      [1400, { opacity: 1, transform: 'translateY(0%) rotate(0deg)' }]
+    ]);
+    A(q('lema'), [{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: 980 });
+    ['linhaE', 'linhaD'].forEach((k) => A(q(k), [{ transform: 'scaleX(0)' }, { transform: 'none' }], { duration: 700, delay: 1080 }));
+    A(q('pular'), [{ opacity: 0 }, { opacity: 1 }], { duration: 400, delay: 600 });
+    st.timers.push(setTimeout(() => this.introFase2(st, q, A), 2000));
+  }
+
+  introFase2(st, q, A) {
+    if (st.done || st.skipping) return;
+    st.root.style.pointerEvents = 'none';
+    const E = 'cubic-bezier(.7,0,.2,1)';
+    const palco = q('palco');
+    const pr = palco.getBoundingClientRect();
+    const img = st.medalImg && st.medalImg.isConnected ? st.medalImg : document.querySelector('#inicio [data-logo="vivo"]');
+    if (img && img !== st.medalImg) { if (st.medalImg) st.medalImg.style.opacity = ''; img.style.opacity = '0'; st.medalImg = img; }
+    const tr = img && img.getBoundingClientRect();
+    const alvo = !!(tr && tr.width > 0 && tr.top >= 0 && tr.bottom <= window.innerHeight);
+    A(q('cortinaE'), [{ transform: 'translateX(0)' }, { transform: 'translateX(-101%)' }], { duration: 950, easing: E });
+    A(q('cortinaD'), [{ transform: 'translateX(0)' }, { transform: 'translateX(101%)' }], { duration: 950, easing: E });
+    A(q('cortinaE'), [{ borderRightColor: 'rgba(217, 164, 65, 0)' }, { borderRightColor: 'rgba(217, 164, 65, 0.6)' }], { duration: 240 });
+    A(q('cortinaD'), [{ borderLeftColor: 'rgba(217, 164, 65, 0)' }, { borderLeftColor: 'rgba(217, 164, 65, 0.6)' }], { duration: 240 });
+    ['moldura', 'lema', 'pular'].forEach((k) => A(q(k), [{ opacity: 1 }, { opacity: 0 }], { duration: 280, easing: 'ease-out' }));
+    if (alvo) {
+      const dx = tr.left + tr.width / 2 - (pr.left + pr.width / 2);
+      const dy = tr.top + tr.height / 2 - (pr.top + pr.height / 2);
+      A(palco, [{ transform: 'none' }, { transform: 'translate(' + dx + 'px, ' + dy + 'px) scale(' + (tr.width / pr.width) + ')' }], { duration: 950, easing: E });
+      const disco = img.parentElement;
+      if (disco && disco.animate) st.hero.push(disco.animate([{ opacity: 0, transform: 'scale(0.8)' }, { opacity: 1, transform: 'none' }], { duration: 600, delay: 360, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' }));
+    } else {
+      A(palco, [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(-28px) scale(0.86)' }], { duration: 560, easing: 'ease-in' });
+    }
+    st.hero.push(...this.heroEntrance(240));
+    st.timers.push(setTimeout(() => this.endIntro(), 960));
+  }
+
+  endIntro() {
+    const st = this._intro;
+    if (!st || st.done) return;
+    st.done = true;
+    st.timers.forEach(clearTimeout);
+    if (st.off) st.off();
+    if (st.medalImg) st.medalImg.style.opacity = '';
+    this.setState({ intro: false });
+    setTimeout(() => this.cumprimentar(document.querySelector('#inicio [data-logo="vivo"]')), 650);
+  }
+
+  skipIntro() {
+    const st = this._intro;
+    if (!st || st.done || st.skipping) return;
+    st.skipping = true;
+    st.timers.forEach(clearTimeout);
+    st.hero.forEach((a) => a.cancel());
+    if (st.medalImg) st.medalImg.style.opacity = '';
+    st.root.style.pointerEvents = 'none';
+    const f = st.root.animate ? st.root.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 320, easing: 'ease-out', fill: 'forwards' }) : null;
+    if (f) f.onfinish = () => this.endIntro(); else this.endIntro();
+  }
+
+  heroEntrance(delay) {
+    const out = [], ease = 'cubic-bezier(.2,.7,.2,1)';
+    const add = (n, kf, o) => { if (n && n.animate) out.push(n.animate(kf, Object.assign({ easing: ease, fill: 'backwards' }, o))); };
+    const figs = document.querySelectorAll('#inicio [data-hero="fig"]');
+    const txts = document.querySelectorAll('#inicio [data-hero="txt"]');
+    [0, 1].forEach((i) => {
+      const base = delay + i * 140;
+      add(figs[i], [{ opacity: 0, transform: 'scale(0.9)' }, { opacity: 1, transform: 'none' }], { duration: 1200, delay: base });
+      if (txts[i]) [...txts[i].children].forEach((c, j) => add(c, [{ opacity: 0, transform: 'translateY(24px)' }, { opacity: 1, transform: 'none' }], { duration: 850, delay: base + 160 + j * 90 }));
+    });
+    document.querySelectorAll('#inicio [data-hero="extra"]').forEach((n, i) => add(n, [{ opacity: 0 }, { opacity: 1 }], { duration: 800, delay: delay + 700 + i * 120 }));
+    document.querySelectorAll('#inicio [data-hero="nav"]').forEach((n, i) => add(n, [{ opacity: 0, transform: 'translateY(-12px)' }, { opacity: 1, transform: 'none' }], { duration: 800, delay: delay + 280 + i * 120 }));
+    return out;
+  }
+
+  setupReveal() {
+    if (this.reduz || typeof IntersectionObserver === 'undefined' || !document.body.animate) return;
+    const INL = new Set(['SPAN', 'A', 'EM', 'STRONG', 'B', 'I', 'SMALL', 'BR', 'SVG', 'PATH', 'CIRCLE', 'RECT', 'LINE', 'POLYLINE', 'POLYGON', 'G', 'IMG', 'LABEL', 'INPUT', 'SELECT', 'OPTION', 'TEXTAREA', 'BUTTON', 'TIME', 'ABBR', 'SUP', 'SUB', 'S', 'U', 'MARK']);
+    const leaf = (n) => [...n.querySelectorAll('*')].every((d) => INL.has(d.tagName.toUpperCase()));
+    const isKicker = (n) => {
+      const f = n.firstElementChild;
+      if (n.tagName !== 'DIV' || !f || f.tagName !== 'SPAN' || f.children.length) return false;
+      const r = f.getBoundingClientRect();
+      return r.width > 20 && r.width < 48 && r.height <= 2;
+    };
+    // Multi-column blocks animate as one piece: moving fragments inside columns makes Chrome redraw them out of place.
+    const multicol = (cs) => cs.columnCount !== 'auto' || cs.columnWidth !== 'auto';
+    const tipo = (n, cs) => {
+      if (multicol(cs)) return 'fade';
+      if (n.matches('.plate')) return 'plate';
+      if (/^H[1-4]$/.test(n.tagName)) return 'titulo';
+      if (isKicker(n)) return 'kicker';
+      if (n.querySelector('.plate')) return null;
+      if (n.matches('p, address, table, figcaption, a, button, img, iframe, label')) return 'fade';
+      return leaf(n) ? 'fade' : null;
+    };
+    const pecas = [];
+    const walk = (el) => {
+      for (const c of el.children) {
+        const cs = getComputedStyle(c);
+        if (cs.display === 'none') continue;
+        if (cs.display === 'contents') { walk(c); continue; }
+        const t = tipo(c, cs);
+        if (t) pecas.push([c, t, cs]); else walk(c);
+      }
+    };
+    document.querySelectorAll('section[id]:not(#inicio)').forEach((s) => walk(s));
+    const OUT = 'cubic-bezier(.16,1,.3,1)', vh = window.innerHeight;
+    const mk = (n, kf, dur) => { const a = n.animate(kf, { duration: dur, easing: OUT, fill: 'both' }); a.pause(); return a; };
+    this._rev = new Map();
+    pecas.forEach(([n, t, cs]) => {
+      const r = n.getBoundingClientRect();
+      if (r.top < vh * 0.95) return;
+      let anims;
+      if (t === 'titulo') {
+        const lh = parseFloat(cs.lineHeight);
+        const umaLinha = !lh || r.height < lh * 1.5;
+        anims = [mk(n, umaLinha ? [
+          { opacity: 0, transform: 'translateY(100%)', clipPath: 'inset(-40% -10% 100% -10%)' },
+          { opacity: 1, offset: 0.45 },
+          { opacity: 1, transform: 'translateY(0%)', clipPath: 'inset(-40% -10% -12% -10%)' }
+        ] : [
+          { opacity: 0, transform: 'translateY(28px)', filter: 'blur(8px)' },
+          { opacity: 1, transform: 'none', filter: 'blur(0px)' }
+        ], 1150)];
+      } else if (t === 'plate') {
+        // unroll top-down; the clip extends past the box so the mat outline and shadow are never cut off
+        anims = [mk(n, [
+          { clipPath: 'inset(0% -64px 100% -64px)' },
+          { clipPath: 'inset(-64px -64px -64px -64px)' }
+        ], 1400)];
+      } else if (t === 'kicker') {
+        const linha = n.firstElementChild;
+        linha.style.transformOrigin = '0 50%';
+        anims = [
+          mk(n, [{ opacity: 0, transform: 'translateX(-12px)' }, { opacity: 1, transform: 'none' }], 900),
+          mk(linha, [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], 1000)
+        ];
+      } else {
+        const temT = cs.transform !== 'none';
+        anims = [mk(n, temT ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 0, transform: 'translateY(20px)' }, { opacity: 1, transform: 'none' }], 900)];
+      }
+      this._rev.set(n, anims);
+    });
+    this._io = new IntersectionObserver((entries) => {
+      const vis = entries.filter((e) => e.isIntersecting).map((e) => e.target);
+      vis.sort((a, b) => (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1));
+      vis.forEach((n, i) => {
+        const anims = this._rev.get(n);
+        this._io.unobserve(n);
+        this._rev.delete(n);
+        if (!anims) return;
+        anims.forEach((a, j) => {
+          if (a.effect && a.effect.updateTiming) a.effect.updateTiming({ delay: Math.min(i, 8) * 70 + j * 120 });
+          a.onfinish = () => a.cancel();
+          a.play();
+        });
+      });
+    }, { rootMargin: '0px 0px -6% 0px' });
+    this._rev.forEach((_, n) => this._io.observe(n));
+  }
+
+  soltar(n) {
+    const a = this._rev && this._rev.get(n);
+    if (!a) return;
+    a.forEach((x) => x.cancel());
+    this._rev.delete(n);
+    if (this._io) this._io.unobserve(n);
+  }
+
+  animarLista(nome, foto) {
+    const box = document.querySelector('[data-lista="' + nome + '"]');
+    if (!box || !box.animate) return;
+    const ease = 'cubic-bezier(.2,.7,.2,1)';
+    [...box.children].filter((c) => c.tagName === 'DIV' && c.getAttribute('role') !== 'tablist').forEach((r, i) => {
+      [r, ...r.querySelectorAll('*')].forEach((n) => this.soltar(n));
+      r.animate(foto ? [{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }] : [{ opacity: 0 }, { opacity: 1 }], { duration: 560, delay: Math.min(i, 12) * 40, easing: ease, fill: 'backwards' });
+    });
+    if (!foto) return;
+    const img = document.querySelector('#cardapio img.plate');
+    if (img) { this.soltar(img); img.animate([{ opacity: 0.15, transform: 'scale(1.05) rotate(-4deg)' }, { opacity: 1, transform: 'none' }], { duration: 800, easing: ease }); }
+    const cap = document.querySelector('#cardapio figcaption');
+    if (cap) { this.soltar(cap); cap.animate([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 600, delay: 120, easing: ease, fill: 'backwards' }); }
+  }
+
+  setupParallax() {
+    if (this.reduz) return;
+    const pick = (sel, i) => document.querySelectorAll(sel)[i || 0] || null;
+    const itens = [
+      [pick('#a-casa img.plate', 1), 'y', 40],
+      [pick('#almoco div[style*="position: absolute"]'), 'y', 36],
+      [pick('#agenda img.plate', 1), 'y', 40],
+      [pick('#drinks figure'), 'y', 24],
+      [pick('#drinks h2'), 'x', Math.min(70, window.innerWidth * 0.06)],
+      [pick('#happy-hour img'), 'y', -18]
+    ].filter((x) => x[0]);
+    if (!itens.length) return;
+    const tick = () => {
+      this._pxRaf = 0;
+      const vh = window.innerHeight;
+      itens.forEach(([el, eixo, k]) => {
+        const ref = (eixo === 'x' ? el : el.parentElement || el).getBoundingClientRect();
+        if (ref.bottom < -200 || ref.top > vh + 200) return;
+        const p = Math.max(-1, Math.min(1, (ref.top + ref.height / 2 - vh / 2) / vh));
+        const v = (p * k).toFixed(1) + 'px';
+        el.style.translate = eixo === 'x' ? v + ' 0px' : '0px ' + v;
+      });
+    };
+    this._px = () => { if (!this._pxRaf) this._pxRaf = requestAnimationFrame(tick); };
+    window.addEventListener('scroll', this._px, { passive: true });
+    window.addEventListener('resize', this._px);
+    tick();
+  }
+
+  setupLogo() {
+    if (this.reduz || !document.body.animate) return;
+    this._hov = (e) => {
+      const alvo = e.target && e.target.closest ? e.target.closest('[data-disco], [data-logo="rodape"]') : null;
+      if (!alvo) return;
+      this.cumprimentar(alvo.matches('[data-logo]') ? alvo : alvo.querySelector('[data-logo]'));
+    };
+    document.addEventListener('pointerover', this._hov);
+    document.addEventListener('click', this._hov);
+    this._idle = setInterval(() => {
+      if (document.hidden || this.introAtivo()) return;
+      const s = document.querySelector('#inicio [data-logo="vivo"]');
+      if (!s) return;
+      const r = s.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < window.innerHeight) this.cumprimentar(s);
+    }, 9000);
+    if (!this.introAtivo()) setTimeout(() => this.cumprimentar(document.querySelector('#inicio [data-logo="vivo"]')), 1600);
+  }
+
+  ensureAnel() {
+    if (this.reduz || !document.body.animate) return;
+    document.querySelectorAll('#inicio [data-anel]').forEach((s) => {
+      if (s.getAnimations && s.getAnimations().length) return;
+      s.animate([{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }], { duration: 60000, iterations: Infinity });
+    });
+  }
+
+  cumprimentar(stage) {
+    if (!stage || !stage.animate || this.reduz) return;
+    const agora = Date.now();
+    if (stage._ate && agora < stage._ate) return;
+    stage._ate = agora + 2200;
+    const q = (k) => stage.querySelector('[data-p="' + k + '"]');
+    const io = 'ease-in-out';
+    const K = (n, frames, delay) => {
+      if (!n) return;
+      const end = frames[frames.length - 1][0];
+      n.animate(frames.map(([t, f]) => Object.assign({ offset: t / end }, f)), { duration: end, delay: delay || 0, easing: 'linear' });
+    };
+    K(q('cartola'), [[0, { transform: 'none', easing: 'cubic-bezier(.3,0,.2,1)' }], [280, { transform: 'translateY(-22%) rotate(-15deg)' }], [560, { transform: 'translateY(-22%) rotate(-15deg)', easing: 'cubic-bezier(.5,0,.3,1)' }], [860, { transform: 'none' }]]);
+    K(q('corrente'), [[0, { transform: 'rotate(0deg)', easing: io }], [300, { transform: 'rotate(12deg)', easing: io }], [580, { transform: 'rotate(-8deg)', easing: io }], [840, { transform: 'rotate(4.5deg)', easing: io }], [1080, { transform: 'rotate(-2deg)', easing: io }], [1280, { transform: 'rotate(0.8deg)', easing: io }], [1420, { transform: 'rotate(0deg)' }]], 120);
+    K(q('bigode'), [[0, { transform: 'none', easing: io }], [150, { transform: 'scaleX(1.08) rotate(-2deg)', easing: io }], [300, { transform: 'scaleX(0.97) rotate(1.5deg)', easing: io }], [460, { transform: 'none' }]], 320);
+    K(q('gravata'), [[0, { transform: 'none', easing: io }], [160, { transform: 'rotate(-9deg)', easing: io }], [320, { transform: 'rotate(7deg)', easing: io }], [480, { transform: 'none' }]], 440);
+    K(q('o'), [[0, { filter: 'drop-shadow(0 0 0 rgba(217, 164, 65, 0))', easing: 'ease-out' }], [220, { filter: 'drop-shadow(0 0 5px rgba(217, 164, 65, 0.95))', easing: 'ease-in' }], [640, { filter: 'drop-shadow(0 0 0 rgba(217, 164, 65, 0))' }]], 560);
+    K(q('brilho'), [[0, { opacity: 0, transform: 'scale(0) rotate(0deg)', easing: 'ease-out' }], [240, { opacity: 1, transform: 'scale(1) rotate(45deg)', easing: 'ease-in' }], [560, { opacity: 0, transform: 'scale(0.2) rotate(90deg)' }]], 600);
+  }
+
+  setupHeroMotion() {
+    if (this.reduz || !document.body.animate) return;
+    document.querySelectorAll('#inicio [data-kb]').forEach((img, i) => {
+      this._loops.push(img.animate([
+        { transform: 'scale(1.04) translate(0%, 0%)' },
+        { transform: i ? 'scale(1.14) translate(1.6%, -2.2%)' : 'scale(1.14) translate(-2.2%, 1.6%)' }
+      ], { duration: 14000 + i * 4000, direction: 'alternate', iterations: Infinity, easing: 'ease-in-out' }));
+    });
+    const hero = document.getElementById('inicio');
+    if (!hero || !(window.matchMedia && window.matchMedia('(pointer: fine)').matches)) return;
+    const figs = [...hero.querySelectorAll('[data-hero="fig"]')];
+    this._pm = (e) => {
+      cancelAnimationFrame(this._pmRaf);
+      this._pmRaf = requestAnimationFrame(() => {
+        const r = hero.getBoundingClientRect();
+        const nx = (e.clientX - r.left) / r.width - 0.5, ny = (e.clientY - r.top) / r.height - 0.5;
+        figs.forEach((f, i) => { const k = i ? -16 : 14; f.style.translate = (nx * k).toFixed(1) + 'px ' + (ny * k).toFixed(1) + 'px'; });
+      });
+    };
+    hero.addEventListener('pointermove', this._pm);
+  }
+
+  async renderPdf(el) {
+    try {
+      if (!this._pdfjs) {
+        this._pdfjs = import('https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.min.mjs').then((m) => {
+          m.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.worker.min.mjs';
+          return m;
+        });
+      }
+      const lib = await this._pdfjs;
+      if (!this._pdfDoc) this._pdfDoc = lib.getDocument(new URL('assets/cardapio-noite-barao.pdf', document.baseURI).href).promise;
+      const pdf = await this._pdfDoc;
+      const w = Math.min(el.clientWidth || 800, 820);
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      for (let n = 1; n <= pdf.numPages; n++) {
+        if (!el.isConnected) return;
+        const page = await pdf.getPage(n);
+        const base = page.getViewport({ scale: 1 });
+        const vp = page.getViewport({ scale: (w / base.width) * dpr });
+        const c = document.createElement('canvas');
+        c.width = Math.floor(vp.width); c.height = Math.floor(vp.height);
+        c.setAttribute('role', 'img');
+        c.setAttribute('aria-label', 'Cardápio, página ' + n + ' de ' + pdf.numPages);
+        c.style.cssText = 'display:block;width:' + w + 'px;max-width:100%;height:auto;background:#fff;box-shadow:0 1px 3px rgba(23,32,28,.18)';
+        el.appendChild(c);
+        await page.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+        if (n === 1 && this.state.pdfStatus !== 'ok') this.setState({ pdfStatus: 'ok' });
+      }
+    } catch (err) {
+      console.warn('PDF', err);
+      this._pdfDoc = null;
+      this.setState({ pdfStatus: 'error' });
+    }
+  }
+
+  PERIODOS = {
+    'Almoço': { ini: '11:30', fim: '14:00', padrao: '12:00', janela: 'Almoço servido todos os dias, das 11h30 às 14h30.' },
+    'Happy hour': { ini: '17:00', fim: '19:30', padrao: '18:00', janela: 'Happy hour das 17h às 20h.' },
+    'Noite': { ini: '18:00', fim: '22:30', padrao: '20:00', janela: 'Reservas para a noite a partir das 18h.' }
+  };
+
+  slots(periodo) {
+    const p = this.PERIODOS[periodo] || this.PERIODOS.Noite;
+    const m = (t) => { const [h, mm] = t.split(':').map(Number); return h * 60 + mm; };
+    const out = [];
+    for (let t = m(p.ini); t <= m(p.fim); t += 30) out.push(String(Math.floor(t / 60)).padStart(2, '0') + ':' + String(t % 60).padStart(2, '0'));
+    return out;
+  }
+
+  dados() {
+    if (this._d) return this._d;
+    const img = (id) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1000&h=1000&q=75`;
+    const I = (nome, preco, desc, tag) => ({ nome, desc: desc || '', tag: tag || '', hasDesc: !!desc, hasTag: !!tag, precoFmt: preco === 'Consultar' ? 'Consultar' : 'R$ ' + preco });
+    const pf = 'Arroz, feijão, bife de rês, ovos, fritas e salada';
+    const xis = (x) => `${x}, presunto, queijo, ovo, tomate, alface, milho, ervilha e maionese`;
+    const especial = 'Com bacon e queijo ou com queijo, calabresa e orégano';
+    const cardapio = [
+      { id: 'executivo', label: 'Prato executivo', nota: 'Arroz, feijão, ovos, fritas e salada', foto: '1504674900247-0877df9cc836', itens: [
+        I('Com bife acebolado com queijo', '38,00', pf), I('Com bife ao molho', '35,00', pf), I('Com bife à milanesa', '40,00', pf),
+        I('Com filé de peixe', '35,00', 'Arroz, feijão, filé de peixe, ovos, fritas e salada')] },
+      { id: 'hamburguer', label: 'Hambúrgueres', nota: 'Pão selado, blend de carne e fritas', foto: '1568901346375-23c9450c58cd', itens: [
+        I('O Barão', '34,00', 'Pão selado, maionese, blend de carne, queijo, alface, tomate, cebola roxa e fritas', 'Tradicional da casa'),
+        I('O Supremo do Barão', '38,00', 'Pão selado, maionese, blend de carne, cheddar, bacon crocante, ovo e fritas'),
+        I('Chedarzão', '44,00', 'Pão selado, maionese, blend de carne, cheddar e fritas'),
+        I('Mini Barão (kids)', '27,00', 'Pão fofinho, blend de carne, queijo e fritas')] },
+      { id: 'xis', label: 'Xis', nota: 'Presunto, queijo, ovo, tomate, alface, milho, ervilha e maionese', foto: '1550547660-d9450f859349', itens: [
+        I('Xis bacon', '38,00', xis('Bacon')), I('Xis calabresa', '33,00', xis('Calabresa')), I('Xis carne picada', '35,00', xis('Carne picada')),
+        I('Xis coração', '38,00', xis('Coração picado')), I('Xis frango', '33,00', xis('Frango')),
+        I('Xis Barão', '45,00', 'Bacon, calabresa, carne, coração, frango, presunto, queijo, ovo, tomate, alface, milho, ervilha e maionese', 'Acompanha fritas')] },
+      { id: 'petiscos', label: 'Petiscos', nota: 'Para dividir na mesa', foto: '1555939594-58d7cb561ad1', itens: [
+        I('Bife a xadrez', '69,00', 'Ao molho, acebolado ou acebolado com queijo'), I('Bife a xadrez à milanesa', '75,00'),
+        I('Frango a xadrez', '49,00', 'Ao molho, acebolado ou acebolado com queijo'), I('Frango a xadrez à milanesa', '55,00'),
+        I('Porção de coração', '48,00', 'Ao molho ou acebolado'), I('Porção de peixe', '52,00', 'Violinha ou anjo'),
+        I('Cebola empanada', '35,00'), I('Polenta palito', '35,00'), I('Porção de queijo à milanesa', '55,00'),
+        I('Picado de frios', '39,00', 'Calabresa, salamito, linguicinha, ovos, tomate cereja, azeitona e queijo'),
+        I('Picado Barão', '98,00', 'Batata frita, bife, cebola empanada, calabresa, salamito, linguicinha, ovos, tomate cereja, azeitona e queijo'),
+        I('Filé rústico', '105,00', 'Filé com batata rústica à moda da casa')] },
+      { id: 'fritas', label: 'Fritas', nota: 'Pequena ou grande', foto: '1573080496219-bb080dd4f877', itens: [
+        I('Pequena', '24,99'), I('Pequena', '34,99', 'Com queijo'), I('Pequena', '39,99', especial),
+        I('Grande', '34,99'), I('Grande', '39,99', 'Com queijo'), I('Grande', '44,99', especial),
+        I('Fritas rústica à moda da casa', '49,99', 'Orégano, calabresa, queijo mussarela e queijo cheddar')] },
+      { id: 'lanches', label: 'Lanches', nota: 'Prensados, sanduíches e torradas', foto: '1571091718767-18b5b1457add', itens: [
+        I('Prensado de calabresa', '30,00', 'Calabresa, tomate, alface, milho, ervilha e maionese'),
+        I('Prensado de frango', '30,00', 'Frango, tomate, alface, milho, ervilha e maionese'),
+        I('Prensado de salsicha', '27,00', 'Duas salsichas, tomate, alface, milho, ervilha e maionese'),
+        I('Sanduíche de frios', '15,00', 'Pão, presunto, queijo, tomate, alface e maionese'),
+        I('Sanduíche de frango', '20,00', 'Pão, frango, queijo, tomate, alface e maionese'),
+        I('Sanduíche de atum', '25,00', 'Pão, atum, queijo, tomate, alface e maionese'),
+        I('Torrada com ovo', '15,00', '3 fatias de pão, ovo, tomate, alface, presunto, queijo e maionese'),
+        I('Torrada sem ovo', '12,00', '3 fatias de pão, tomate, alface, presunto, queijo e maionese'),
+        I('Torrada com carne', '25,00', '3 fatias de pão, bife, ovo, tomate, alface, presunto, queijo e maionese'),
+        I('Potinho extra de maionese', '3,00', 'Maionese da casa'),
+        I('Potinho extra de mostarda', '3,00', 'Mostarda com geleia de abacaxi e pimenta')] },
+      { id: 'pasteis', label: 'Pastéis', nota: 'Escolha até 3 sabores', foto: '1529543544282-ea669407fca3', itens: [
+        I('Pastel simples', '15,00', 'Bacon, calabresa, carne, coração, frango, presunto, queijo mussarela, queijo cheddar ou requeijão'),
+        I('Pastel tartaruga', '25,00', 'Os mesmos sabores, no tamanho tartaruga'),
+        I('Pastel doce simples', '15,00', 'Chocolate branco ou preto, puro, com morango ou com queijo'),
+        I('Pastel doce tartaruga', '25,00', 'Os mesmos sabores doces, no tamanho tartaruga')] },
+      { id: 'sobremesas', label: 'Sobremesas', nota: 'Para fechar a refeição', foto: '1563805042-7684c019e1cb', itens: [
+        I('Petit gateau com sorvete', '30,00'), I('Sorvete na taça', '20,00')] }
+    ];
+    const carta = [
+      { id: 'drinks', label: 'Drinks', nota: '', itens: [
+        I('Drink Barão', '35,00', 'Gin, energético e frutas', 'Assinatura da casa'),
+        I('Aperol Spritz', '35,00', 'Aperol, água com gás, espumante e gelo'),
+        I('Drink MaracuJack', '35,00'), I('Drink Corona', '40,00'),
+        I('Mojito', '30,00', 'Rum, água com gás, hortelã e gelo'), I('Gin tônica', '30,00'),
+        I('Drink Negroni', '30,00', 'Gin, Campari, vermute rosso, laranja e gelo'), I('Drink Skol Beats', '30,00')] },
+      { id: 'caipiras', label: 'Caipiras', nota: 'Com vodka ou cachaça, como preferir.', itens: [
+        I('Limão', '25,00'), I('Maracujá', '25,00'), I('Morango', '25,00'), I('Morango e limão', '25,00'), I('Morango e alecrim', '25,00'),
+        I('Morango e maracujá', '25,00'), I('Abacaxi e hortelã', '25,00'), I('Abacaxi', '25,00'), I('Vinho', '25,00'),
+        I('Caipira tripla (1 L)', '70,00'), I('Adicional de leite condensado', '3,00'), I('Adicional de leite condensado (tripla)', '5,00')] },
+      { id: 'chopp', label: 'Chopp', nota: 'Chopp Max Haus, Pilsen ou Red Ale.', itens: [
+        I('Pilsen 400 ml', '16,00'), I('Pilsen 600 ml', '19,50'), I('Pilsen 1 L', '33,00'),
+        I('Red Ale 400 ml', '17,50'), I('Red Ale 600 ml', '20,00'), I('Red Ale 1 L', '36,00'),
+        I('Torre Pilsen 2,5 L', '95,00'), I('Torre Pilsen 3,5 L', '110,00'), I('Torre Red Ale 2,5 L', '103,00'), I('Torre Red Ale 3,5 L', '115,00')] },
+      { id: 'longnecks', label: 'Long necks', nota: '', itens: [
+        I('Brahma Malzbier 355 ml', '15,00'), I('Budweiser 330 ml', '15,00'), I('Corona 355 ml', '16,00'), I('Corona 0% 355 ml', '16,00'),
+        I('Heineken 330 ml', '16,00'), I('Heineken 0% 330 ml', '16,00'), I('Original 300 ml', '14,00'), I('Sol Mexicana 330 ml', '15,00'), I('Skol Beats', '20,00')] },
+      { id: 'destilados', label: 'Destilados', nota: '', itens: [
+        I('Absolut', '15,00'), I('Amarula', '25,00'), I('Campari', '25,00'), I('Gin', '25,00'), I('Jack Daniel’s', '30,00'),
+        I('Jägermeister', '25,00'), I('Johnnie Red', '25,00'), I('Licor 43', '30,00'), I('Underberg', '25,00')] },
+      { id: 'vinhos', label: 'Vinhos e espumantes', nota: '', itens: [
+        I('Casillero del Diablo', '150,00'), I('Reservado Concha y Toro', '120,00'), I('Vinho colonial (jarra)', '65,00'),
+        I('Vinho colonial seco ou suave (taça)', '25,00'), I('Vinho especial', 'Consultar'),
+        I('Espumante nacional', '95,00'), I('Espumante importado', 'Consultar')] },
+      { id: 'semalcool', label: 'Sem álcool', nota: '', itens: [
+        I('Suco natural', '12,00', 'Abacaxi, abacaxi com hortelã, laranja, limão, mamão, maracujá ou morango'),
+        I('Suco misto (2 sabores)', '15,00'), I('Suco verde', '20,00', 'Abacaxi, couve e laranja'),
+        I('Água mineral', '8,00', 'Com e sem gás'), I('Água tônica (lata)', '10,00'), I('Aquarius ou H2O', '10,00'),
+        I('Refrigerante (lata)', '8,00'), I('Refrigerante (600 ml)', '10,00'), I('Suco Del Valle', '8,00', 'Uva ou pêssego'),
+        I('Energético Red Bull', '17,50', 'Sabores')] }
+    ];
+    const agenda = [
+      { dia: '15', mes: 'out', semana: 'Quinta', hora: '20h', titulo: 'Voz e violão' },
+      { dia: '16', mes: 'out', semana: 'Sexta', hora: '21h', titulo: 'Samba e pagode' },
+      { dia: '17', mes: 'out', semana: 'Sábado', hora: '21h', titulo: 'Pop rock acústico' },
+      { dia: '22', mes: 'out', semana: 'Quinta', hora: '20h', titulo: 'MPB ao vivo' },
+      { dia: '23', mes: 'out', semana: 'Sexta', hora: '21h', titulo: 'Sertanejo' }
+    ].map(e => ({ ...e, atracao: 'Atração a confirmar' }));
+    const ordem = ['petiscos', 'hamburguer', 'xis', 'lanches', 'fritas', 'pasteis', 'executivo', 'sobremesas'];
+    cardapio.sort((a, b) => ordem.indexOf(a.id) - ordem.indexOf(b.id));
+    this._d = {
+      cardapio: cardapio.map(c => ({ ...c, foto: img(c.foto) })),
+      carta: carta.map(c => ({ ...c, hasNota: !!c.nota })),
+      agenda
+    };
+    return this._d;
+  }
+
+  renderVals() {
+    const s = this.state, p = this.props, d = this.dados();
+    const vw = s.vw, isWide = vw >= 1100, twoCol = vw >= 860;
+    const num = String(p.whatsapp || '555196805522').replace(/\D/g, '');
+    const wa = (t) => `https://wa.me/${num}?text=${encodeURIComponent(t)}`;
+    const local = num.startsWith('55') ? num.slice(2) : num;
+    const telefone = local.length === 11 ? `(${local.slice(0, 2)}) ${local.slice(2, 7)}-${local.slice(7)}`
+      : local.length === 10 ? `(${local.slice(0, 2)}) ${local.slice(2, 6)}-${local.slice(6)}` : num;
+    const cat = d.cardapio.find(c => c.id === s.cat) || d.cardapio[0];
+    const carta = d.carta.find(c => c.id === s.carta) || d.carta[0];
+    const hora = s.hora ? s.hora.replace(':', 'h').replace(/h00$/, 'h') : '';
+    const dataFmt = s.data ? s.data.split('-').reverse().join('/') : 'a combinar';
+    const linhas = ['Olá, Barão! Gostaria de reservar uma mesa.'];
+    if (s.nome.trim()) linhas.push(`Nome: ${s.nome.trim()}`);
+    linhas.push(`Data: ${dataFmt}${hora ? `, às ${hora}` : ''}`);
+    linhas.push(`Pessoas: ${s.pessoas}`);
+    linhas.push(`Período: ${s.periodo}`);
+    if (s.ocasiao !== 'Nenhuma em especial') linhas.push(`Ocasião: ${s.ocasiao}`);
+    if (s.obs.trim()) linhas.push(`Observações: ${s.obs.trim()}`);
+    const mensagem = linhas.join('\n');
+    const t = new Date();
+    const hoje = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(t.getDate()).padStart(2, '0')}`;
+    const set = (k) => (e) => this.setState({ [k]: e.target.value });
+    return {
+      isWide, twoCol, compactNav: !isWide, fixedBar: isWide && s.scrolled,
+      barT: s.scrolled ? 'none' : 'translateY(-100%)',
+      barO: s.scrolled ? 1 : 0,
+      barV: s.scrolled ? 'visible' : 'hidden',
+      barTr: s.scrolled ? 'transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.35s ease, visibility 0s linear 0s' : 'transform 0.4s cubic-bezier(0.4, 0, 1, 1), opacity 0.3s ease, visibility 0s linear 0.4s',
+      medalhaMeio: twoCol && !isWide, medalhaMobile: !twoCol,
+      heroCols: twoCol ? 'minmax(0, 1fr) minmax(0, 1fr)' : 'minmax(0, 1fr)',
+      heroMinH: twoCol ? 'max(620px, min(100svh, 880px))' : 'auto',
+      heroPadTop: isWide ? '170px' : (twoCol ? '210px' : '48px'),
+      heroPadTopNoite: isWide ? '170px' : (twoCol ? '210px' : '104px'),
+      agendaCols: vw >= 960 ? 'minmax(0, 5fr) minmax(0, 7fr)' : 'minmax(0, 1fr)',
+      stickyPos: vw >= 1000 ? 'sticky' : 'relative',
+      cardapioCols: vw >= 1000 ? 'minmax(0, 5fr) minmax(0, 6fr)' : 'minmax(0, 1fr)',
+      menuOpen: s.menuOpen,
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      cardapioTabs: d.cardapio.map(c => ({ label: c.label, sel: c.id === cat.id, color: c.id === cat.id ? '#D9A441' : '#C9C3AE', line: c.id === cat.id ? '#D9A441' : 'transparent', select: () => this.setState({ cat: c.id }) })),
+      cat,
+      introOn: !!(s.intro && p.mostrarAbertura !== false),
+      introRef: this._introRef || (this._introRef = (el) => { if (el && !this._introStarted) { this._introStarted = true; this.playIntro(el); } }),
+      pularIntro: this._pular || (this._pular = () => this.skipIntro()),
+      pdfOpen: s.pdfOpen,
+      pdfCarregando: s.pdfStatus === 'loading',
+      pdfErro: s.pdfStatus === 'error',
+      abrirPdf: (e) => { if (e) e.preventDefault(); this.setState({ pdfOpen: true, pdfStatus: 'loading', menuOpen: false }); },
+      fecharPdf: () => this.setState({ pdfOpen: false }),
+      fecharPdfFundo: (e) => { if (e.target === e.currentTarget) this.setState({ pdfOpen: false }); },
+      pdfRef: this._pdfRef || (this._pdfRef = (el) => { if (el) this.renderPdf(el); }),
+      fotoRef: (el) => { if (el && el.getAttribute('src') !== cat.foto) el.setAttribute('src', cat.foto); },
+      cartaTabs: d.carta.map(c => ({ label: c.label, sel: c.id === carta.id, color: c.id === carta.id ? '#17201C' : '#5F6962', line: c.id === carta.id ? '#C8641A' : 'transparent', select: () => this.setState({ carta: c.id }) })),
+      carta,
+      agenda: d.agenda.map(e => ({ ...e, wa: wa(`Olá, Barão! Quero reservar uma mesa para ${e.semana.toLowerCase()}, ${e.dia}/10, noite de ${e.titulo}.`) })),
+      showPrecos: p.mostrarPrecos !== false,
+      showProv: !!p.marcarProvisorios,
+      waGeral: wa('Olá, Barão! Gostaria de fazer uma reserva.'),
+      waHappy: wa('Olá, Barão! Quero reservar uma mesa para o happy hour.'),
+      waReserva: wa(mensagem), mensagem, telefone, hoje,
+      nome: s.nome, data: s.data, hora: s.hora, pessoas: s.pessoas, ocasiao: s.ocasiao, obs: s.obs,
+      setNome: set('nome'), setData: set('data'), setHora: set('hora'), setOcasiao: set('ocasiao'), setObs: set('obs'),
+      menosPessoas: () => this.setState(st => ({ pessoas: Math.max(1, st.pessoas - 1) })),
+      maisPessoas: () => this.setState(st => ({ pessoas: Math.min(60, st.pessoas + 1) })),
+      semanaCols: vw >= 1100 ? 'repeat(7, minmax(0, 1fr))' : (vw >= 640 ? 'repeat(2, minmax(0, 1fr))' : 'minmax(0, 1fr)'),
+      semanaAlmoco: [['Segunda', 1, 'Carne de panela com aipim'], ['Terça', 2, 'Frango ao molho com polenta'], ['Quarta', 3, 'Galeto assado com massa'], ['Quinta', 4, 'Lasanha à bolonhesa'], ['Sexta', 5, 'Filé de peixe à milanesa'], ['Sábado', 6, 'Feijoada completa'], ['Domingo', 0, 'Costela assada']]
+        .map(([dia, n, prato]) => { const h = n === t.getDay(); return { dia, prato, hoje: h, line: h ? '#b68235' : 'rgba(23, 32, 28, 0.16)', cor: h ? '#7d5411' : '#5F6962' }; }),
+      horaOptions: this.slots(s.periodo).map(h => React.createElement('option', { key: h, value: h }, h.replace(':', 'h').replace(/h00$/, 'h'))),
+      periodos: ['Almoço', 'Happy hour', 'Noite'].map(x => ({ label: x, checked: s.periodo === x, select: () => this.setState(st => ({ periodo: x, hora: this.slots(x).includes(st.hora) ? st.hora : this.PERIODOS[x].padrao })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>
