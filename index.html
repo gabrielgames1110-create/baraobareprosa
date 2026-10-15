@@ -10,8 +10,8 @@
 <helmet>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Barão Bar e Prosa · Venâncio Aires/RS</title>
-  <link rel="stylesheet" href="ds/styles.css">
-  <script src="ds/ds-bundle.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="ds-bundle.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
   <style>
@@ -32,15 +32,15 @@
       </div>
       <div aria-hidden="true" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(18px, 3.2vh, 32px); pointer-events: none;">
         <div data-k="palco" style="position: relative; width: clamp(170px, min(24vw, 40vh), 300px); aspect-ratio: 199 / 234;">
-          <img data-k="cartola" src="assets/logo-partes/cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%; opacity: 0;">
-          <img data-k="b" src="assets/logo-partes/b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto; opacity: 0;">
-          <img data-k="a" src="assets/logo-partes/a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto; opacity: 0;">
-          <img data-k="r" src="assets/logo-partes/r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto; opacity: 0;">
-          <img data-k="atil" src="assets/logo-partes/atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto; opacity: 0;">
-          <img data-k="o" src="assets/logo-partes/o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto; opacity: 0;">
-          <img data-k="bigode" src="assets/logo-partes/bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto; opacity: 0;">
-          <img data-k="corrente" src="assets/logo-partes/corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%; opacity: 0;">
-          <img data-k="gravata" src="assets/logo-partes/gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto; opacity: 0;">
+          <img data-k="cartola" src="cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%; opacity: 0;">
+          <img data-k="b" src="b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto; opacity: 0;">
+          <img data-k="a" src="a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto; opacity: 0;">
+          <img data-k="r" src="r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto; opacity: 0;">
+          <img data-k="atil" src="atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto; opacity: 0;">
+          <img data-k="o" src="o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto; opacity: 0;">
+          <img data-k="bigode" src="bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto; opacity: 0;">
+          <img data-k="corrente" src="corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%; opacity: 0;">
+          <img data-k="gravata" src="gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto; opacity: 0;">
         </div>
         <div data-k="lema" style="display: flex; align-items: center; gap: 14px; opacity: 0;">
           <span data-k="linhaE" style="width: 44px; height: 1px; background: #D9A441; transform-origin: 100% 50%;"></span>
@@ -57,7 +57,7 @@
     <header style="position: sticky; top: 0; z-index: 60; background: rgba(255, 249, 233, 0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(23, 32, 28, 0.14);">
       <div style="max-width: 1240px; margin: 0 auto; height: 64px; padding: 0 clamp(16px, 4vw, 40px); display: flex; align-items: center; gap: 10px;">
         <a href="#inicio" aria-label="Barão Bar e Prosa, início" style="display: flex; align-items: center; gap: 10px; margin-right: auto; color: #17201C; text-decoration: none;">
-          <img src="assets/marca-linha-tinta.png" alt="" style="height: 34px; width: auto;">
+          <img src="marca-linha-tinta.png" alt="" style="height: 34px; width: auto;">
           <span style="display: flex; flex-direction: column; line-height: 1;">
             <span style="font-family: var(--font-heading); font-size: 20px; font-weight: 500; letter-spacing: 0.2em;">BARÃO</span>
             <span style="font-family: var(--font-heading); font-style: italic; font-size: 14px; color: #7d5411; margin-top: 3px;">bar e prosa</span>
@@ -75,7 +75,7 @@
     <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 60; background: rgba(10, 33, 24, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(217, 164, 65, 0.35); color: #FFF9E9; --color-accent: #D9A441; --color-text: #FFF9E9; transform: {{ barT }}; opacity: {{ barO }}; visibility: {{ barV }}; transition: {{ barTr }};">
       <div style="max-width: 1240px; margin: 0 auto; height: 64px; padding: 0 clamp(20px, 4vw, 40px); display: flex; align-items: center; gap: 32px;">
         <a href="#inicio" aria-label="Barão Bar e Prosa, início" style="display: flex; align-items: center; gap: 12px; margin-right: auto; color: #FFF9E9; text-decoration: none;">
-          <img src="assets/marca-linha-ouro.png" alt="" style="height: 32px; width: auto;">
+          <img src="marca-linha-ouro.png" alt="" style="height: 32px; width: auto;">
           <span style="font-family: var(--font-heading); font-size: 20px; font-weight: 500; letter-spacing: 0.2em;">BARÃO</span>
           <span style="font-family: var(--font-heading); font-style: italic; font-size: 16px; color: #D9A441;">bar e prosa</span>
         </a>
@@ -96,7 +96,7 @@
     <div role="dialog" aria-label="Menu" style="position: fixed; inset: 0; z-index: 100; background: #0E2D20; color: #FFF9E9; --color-accent: #D9A441; --color-text: #FFF9E9; --color-divider: rgba(255, 249, 233, 0.16); display: flex; flex-direction: column; padding: 0 clamp(20px, 5vw, 40px) 32px; overflow-y: auto;">
       <div style="height: 64px; display: flex; align-items: center; justify-content: space-between; flex: 0 0 auto;">
         <span style="display: flex; align-items: center; gap: 10px;">
-          <img src="assets/marca-linha-ouro.png" alt="" style="height: 32px; width: auto;">
+          <img src="marca-linha-ouro.png" alt="" style="height: 32px; width: auto;">
           <span style="font-family: var(--font-heading); font-size: 20px; font-weight: 500; letter-spacing: 0.2em;">BARÃO</span>
         </span>
         <button type="button" class="btn btn-secondary btn-icon" onClick="{{ closeMenu }}" aria-label="Fechar menu" style="width: 44px; height: 44px; color: #FFF9E9;">
@@ -125,7 +125,7 @@
       <div style="width: min(900px, 100%); height: 100%; display: flex; flex-direction: column; background: #FFF9E9; color: #17201C; border: 1px solid rgba(182, 130, 53, 0.5); border-radius: 4px; box-shadow: var(--shadow-lg); overflow: hidden;">
         <div style="display: flex; align-items: center; gap: 10px; padding: 10px 10px 10px 22px; border-bottom: 1px solid rgba(23, 32, 28, 0.14);">
           <span style="margin-right: auto; font-family: var(--font-heading); font-size: 24px; line-height: 1.1;">Cardápio da noite</span>
-          <a class="btn btn-secondary" href="assets/cardapio-noite-barao.pdf" download="Cardapio-Barao-Bar-e-Prosa.pdf" style="min-height: 44px; padding: 0 14px; font-size: 15px;">
+          <a class="btn btn-secondary" href="cardapio-noite-barao.pdf" download="Cardapio-Barao-Bar-e-Prosa.pdf" style="min-height: 44px; padding: 0 14px; font-size: 15px;">
             <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg>
             Baixar PDF
           </a>
@@ -138,7 +138,7 @@
             <p style="margin: 40px 0; text-align: center; font-family: var(--font-heading); font-style: italic; font-size: 22px; color: #5F6962;">Abrindo o cardápio…</p>
           </sc-if>
           <sc-if value="{{ pdfErro }}" hint-placeholder-val="{{ false }}">
-            <p style="margin: 40px 0; text-align: center; font-size: 15px; color: #3D4841;">Não foi possível exibir o cardápio aqui. <a href="assets/cardapio-noite-barao.pdf" download="Cardapio-Barao-Bar-e-Prosa.pdf">Baixe o PDF</a>.</p>
+            <p style="margin: 40px 0; text-align: center; font-size: 15px; color: #3D4841;">Não foi possível exibir o cardápio aqui. <a href="cardapio-noite-barao.pdf" download="Cardapio-Barao-Bar-e-Prosa.pdf">Baixe o PDF</a>.</p>
           </sc-if>
           <div ref="{{ pdfRef }}" style="display: flex; flex-direction: column; align-items: center; gap: 14px;"></div>
         </div>
@@ -201,15 +201,15 @@
           <span data-disco="1" style="position: relative; cursor: pointer; width: 124px; height: 124px; border-radius: 50%; background: #0E2D20; border: 1px solid #D9A441; box-shadow: inset 0 0 0 5px #0E2D20, inset 0 0 0 6px rgba(217, 164, 65, 0.55), var(--shadow-md); display: grid; place-items: center;">
             <span style="position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;">Barão Bar e Prosa</span>
             <span data-logo="vivo" aria-hidden="true" style="position: relative; display: block; width: 62px; aspect-ratio: 199 / 234; margin-left: 3px;">
-              <img data-p="cartola" src="assets/logo-partes/cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%;">
-              <img data-p="b" src="assets/logo-partes/b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto;">
-              <img data-p="a" src="assets/logo-partes/a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto;">
-              <img data-p="r" src="assets/logo-partes/r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto;">
-              <img data-p="atil" src="assets/logo-partes/atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto;">
-              <img data-p="o" src="assets/logo-partes/o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto;">
-              <img data-p="bigode" src="assets/logo-partes/bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto;">
-              <img data-p="corrente" src="assets/logo-partes/corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%;">
-              <img data-p="gravata" src="assets/logo-partes/gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto;">
+              <img data-p="cartola" src="cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%;">
+              <img data-p="b" src="b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto;">
+              <img data-p="a" src="a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto;">
+              <img data-p="r" src="r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto;">
+              <img data-p="atil" src="atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto;">
+              <img data-p="o" src="o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto;">
+              <img data-p="bigode" src="bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto;">
+              <img data-p="corrente" src="corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%;">
+              <img data-p="gravata" src="gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto;">
               <svg data-p="brilho" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; left: 71%; top: 42.9%; width: 12%; height: auto; opacity: 0; transform-origin: 50% 50%; overflow: visible;"><path fill="#FFF9E9" d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>
             </span>
           </span>
@@ -232,15 +232,15 @@
               <text fill="#D9A441" style="font-family: var(--font-body); font-size: 8.6px; font-weight: 500;"><textPath href="#anel-w" textLength="410" lengthAdjust="spacing">BAR E PROSA · ALMOÇO · DRINKS · MÚSICA · VENÂNCIO AIRES · </textPath></text>
             </svg>
             <span data-logo="vivo" aria-hidden="true" style="position: relative; display: block; width: 76px; aspect-ratio: 199 / 234; margin-left: 4px;">
-              <img data-p="cartola" src="assets/logo-partes/cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%;">
-              <img data-p="b" src="assets/logo-partes/b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto;">
-              <img data-p="a" src="assets/logo-partes/a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto;">
-              <img data-p="r" src="assets/logo-partes/r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto;">
-              <img data-p="atil" src="assets/logo-partes/atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto;">
-              <img data-p="o" src="assets/logo-partes/o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto;">
-              <img data-p="bigode" src="assets/logo-partes/bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto;">
-              <img data-p="corrente" src="assets/logo-partes/corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%;">
-              <img data-p="gravata" src="assets/logo-partes/gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto;">
+              <img data-p="cartola" src="cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%;">
+              <img data-p="b" src="b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto;">
+              <img data-p="a" src="a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto;">
+              <img data-p="r" src="r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto;">
+              <img data-p="atil" src="atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto;">
+              <img data-p="o" src="o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto;">
+              <img data-p="bigode" src="bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto;">
+              <img data-p="corrente" src="corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%;">
+              <img data-p="gravata" src="gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto;">
               <svg data-p="brilho" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; left: 71%; top: 42.9%; width: 12%; height: auto; opacity: 0; transform-origin: 50% 50%; overflow: visible;"><path fill="#FFF9E9" d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>
             </span>
           </span>
@@ -265,15 +265,15 @@
               <text fill="#D9A441" style="font-family: var(--font-body); font-size: 8.6px; font-weight: 500;"><textPath href="#anel-m" textLength="410" lengthAdjust="spacing">BAR E PROSA · ALMOÇO · DRINKS · MÚSICA · VENÂNCIO AIRES · </textPath></text>
             </svg>
             <span data-logo="vivo" aria-hidden="true" style="position: relative; display: block; width: 68px; aspect-ratio: 199 / 234; margin-left: 4px;">
-              <img data-p="cartola" src="assets/logo-partes/cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%;">
-              <img data-p="b" src="assets/logo-partes/b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto;">
-              <img data-p="a" src="assets/logo-partes/a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto;">
-              <img data-p="r" src="assets/logo-partes/r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto;">
-              <img data-p="atil" src="assets/logo-partes/atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto;">
-              <img data-p="o" src="assets/logo-partes/o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto;">
-              <img data-p="bigode" src="assets/logo-partes/bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto;">
-              <img data-p="corrente" src="assets/logo-partes/corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%;">
-              <img data-p="gravata" src="assets/logo-partes/gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto;">
+              <img data-p="cartola" src="cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%;">
+              <img data-p="b" src="b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto;">
+              <img data-p="a" src="a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto;">
+              <img data-p="r" src="r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto;">
+              <img data-p="atil" src="atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto;">
+              <img data-p="o" src="o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto;">
+              <img data-p="bigode" src="bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto;">
+              <img data-p="corrente" src="corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%;">
+              <img data-p="gravata" src="gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto;">
               <svg data-p="brilho" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; left: 71%; top: 42.9%; width: 12%; height: auto; opacity: 0; transform-origin: 50% 50%; overflow: visible;"><path fill="#FFF9E9" d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>
             </span>
         </span>
@@ -296,7 +296,7 @@
             <span style="display: inline-flex; margin-top: 16px; font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #C8641A; border: 1px dashed #C8641A; padding: 5px 9px; border-radius: 2px;">Provisório · trocar pela história real da casa</span>
           </sc-if>
           <div style="display: flex; align-items: center; gap: 18px; margin-top: 32px;">
-            <img src="assets/ilustra-whisky-tinta.png" alt="" style="width: 72px; height: auto;">
+            <img src="ilustra-whisky-tinta.png" alt="" style="width: 72px; height: auto;">
             <span style="font-family: var(--font-heading); font-style: italic; font-size: 28px; color: #7d5411; line-height: 1.1;">— Chef Barão</span>
           </div>
         </div>
@@ -424,7 +424,7 @@
           <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(40px, 5.2vw, 72px); line-height: 1.02; letter-spacing: -0.012em; text-wrap: balance;">À noite, a cozinha acompanha a prosa.</h2>
           <p style="margin: 22px 0 0; font-size: 17px; line-height: 1.7; color: #E4DCC6; max-width: 34em; text-wrap: pretty;">Petiscos para dividir, hambúrgueres, xis, lanches e pastéis, servidos à noite junto com o bar.</p>
         </div>
-        <a class="btn btn-secondary" href="assets/cardapio-noite-barao.pdf" target="_blank" rel="noopener" onClick="{{ abrirPdf }}" style="min-height: 46px; padding: 0 20px; font-size: 16px; color: #FFF9E9;">
+        <a class="btn btn-secondary" href="cardapio-noite-barao.pdf" target="_blank" rel="noopener" onClick="{{ abrirPdf }}" style="min-height: 46px; padding: 0 20px; font-size: 16px; color: #FFF9E9;">
           <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
           Cardápio completo em PDF
         </a>
@@ -569,7 +569,7 @@
   <section id="happy-hour" data-screen-label="Happy hour" style="background: #F6EED8; --color-surface: #FFF9E9; padding: clamp(64px, 9vw, 120px) clamp(20px, 5vw, 64px); scroll-margin-top: 64px;">
     <div style="max-width: 1240px; margin: 0 auto; border: 1px solid #b68235; padding: 7px; border-radius: 2px;">
       <div style="border: 1px solid rgba(182, 130, 53, 0.45); padding: clamp(28px, 5vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(36px, 5vw, 72px); align-items: center;">
-        <img src="assets/ilustra-chopp-tinta.png" alt="Ilustração de uma mão erguendo uma caneca de chopp" style="width: min(100%, 250px); height: auto; justify-self: center;">
+        <img src="ilustra-chopp-tinta.png" alt="Ilustração de uma mão erguendo uma caneca de chopp" style="width: min(100%, 250px); height: auto; justify-self: center;">
         <div>
           <div style="display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #7d5411; margin-bottom: 20px;"><span style="width: 32px; height: 1px; background: currentColor;"></span>Happy hour</div>
           <h2 style="margin: 0; font-family: var(--font-heading); font-weight: 400; font-size: clamp(40px, 4.6vw, 64px); line-height: 1.02; letter-spacing: -0.012em; text-wrap: balance;">Para começar a noite</h2>
@@ -791,15 +791,15 @@
         <div>
           <span style="position: relative; display: block; cursor: pointer; width: 112px;"><span style="position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;">Barão</span>
             <span data-logo="rodape" aria-hidden="true" style="position: relative; display: block; width: 112px; aspect-ratio: 199 / 234; margin-left: 0px;">
-              <img data-p="cartola" src="assets/logo-partes/cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%;">
-              <img data-p="b" src="assets/logo-partes/b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto;">
-              <img data-p="a" src="assets/logo-partes/a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto;">
-              <img data-p="r" src="assets/logo-partes/r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto;">
-              <img data-p="atil" src="assets/logo-partes/atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto;">
-              <img data-p="o" src="assets/logo-partes/o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto;">
-              <img data-p="bigode" src="assets/logo-partes/bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto;">
-              <img data-p="corrente" src="assets/logo-partes/corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%;">
-              <img data-p="gravata" src="assets/logo-partes/gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto;">
+              <img data-p="cartola" src="cartola.png" alt="" style="position: absolute; left: 46.734%; top: 0.855%; width: 51.759%; height: auto; transform-origin: 3.9% 95.7%;">
+              <img data-p="b" src="b.png" alt="" style="position: absolute; left: 0.503%; top: 44.444%; width: 18.090%; height: auto;">
+              <img data-p="a" src="a.png" alt="" style="position: absolute; left: 18.593%; top: 47.863%; width: 18.090%; height: auto;">
+              <img data-p="r" src="r.png" alt="" style="position: absolute; left: 37.186%; top: 47.863%; width: 15.578%; height: auto;">
+              <img data-p="atil" src="atil.png" alt="" style="position: absolute; left: 53.266%; top: 41.453%; width: 18.090%; height: auto;">
+              <img data-p="o" src="o.png" alt="" style="position: absolute; left: 71.357%; top: 44.444%; width: 22.613%; height: auto;">
+              <img data-p="bigode" src="bigode.png" alt="" style="position: absolute; left: 49.749%; top: 66.667%; width: 44.724%; height: auto;">
+              <img data-p="corrente" src="corrente.png" alt="" style="position: absolute; left: 91.457%; top: 52.564%; width: 7.538%; height: auto; transform-origin: 43.3% 5.5%;">
+              <img data-p="gravata" src="gravata.png" alt="" style="position: absolute; left: 61.809%; top: 84.188%; width: 20.603%; height: auto;">
               <svg data-p="brilho" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; left: 71%; top: 42.9%; width: 12%; height: auto; opacity: 0; transform-origin: 50% 50%; overflow: visible;"><path fill="#FFF9E9" d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>
             </span>
           </span>
@@ -823,7 +823,7 @@
           <span>À noite a resenha começa</span>
         </div>
         <figure style="margin: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
-          <img src="assets/qr-instagram-creme.png" alt="QR code para o Instagram do Barão" style="width: 112px; height: 112px;">
+          <img src="qr-instagram-creme.png" alt="QR code para o Instagram do Barão" style="width: 112px; height: 112px;">
           <figcaption style="margin: 0; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #C9C3AE;">Não leia esse QR code</figcaption>
         </figure>
       </div>
@@ -1237,7 +1237,7 @@ class Component extends DCLogic {
         });
       }
       const lib = await this._pdfjs;
-      if (!this._pdfDoc) this._pdfDoc = lib.getDocument(new URL('assets/cardapio-noite-barao.pdf', document.baseURI).href).promise;
+      if (!this._pdfDoc) this._pdfDoc = lib.getDocument(new URL('cardapio-noite-barao.pdf', document.baseURI).href).promise;
       const pdf = await this._pdfDoc;
       const w = Math.min(el.clientWidth || 800, 820);
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
